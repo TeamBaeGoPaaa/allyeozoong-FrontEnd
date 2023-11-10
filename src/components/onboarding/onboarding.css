@@ -1,0 +1,96 @@
+:root {
+  /* Color */
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --blue-color: #0099dd;
+  --red-color: #ff0000;
+  --bg-grey-color: #f9f9f9;
+  --light-grey-color: #ececec;
+  --dark-grey-color: #888888;
+
+  /* Size */
+  --spacing: 12px;
+  --spacing-small: 6px;
+  --avatar-size: 36px;
+
+  /* Font Size */
+  --font-large: 20px;
+  --font-regular: 16px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+
+  --font-regular: "regular";
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.onboarding-background {
+  width: 100%;
+  height: 450px;
+  margin-top: 20px;
+  background-color: var(--light-grey-color);
+  display: flex;
+  justify-content: space-around;
+  padding-left: 13%;
+  padding-right: 100px;
+  padding-top: 40px;
+}
+
+.text {
+  padding-top: 50px;
+  position: relative;
+}
+
+.topText {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.serviceName {
+  font-weight: bold;
+  font-size: 60px;
+  color: var(--blue-color);
+}
+
+.bottomText {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.verticalLine {
+  width: 3px;
+  height: 90px;
+  background-color: #93dfff;
+}
+
+.onboarding_description {
+  margin-left: 20px;
+}
+
+.btn {
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  font-weight: normal;
+  border: 0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-top: 15px;
+  float: right;
+}
+
+.bar {
+  width: 100%;
+  height: 100px;
+  background-color: #93dfff;
+}
+
+.image {
+  margin-right: 13%;
+  display: block;
+}

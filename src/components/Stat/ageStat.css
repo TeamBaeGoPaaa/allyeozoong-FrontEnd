@@ -1,0 +1,59 @@
+:root {
+    /* Color */
+    --white-color: #ffffff;
+    --black-color: #000000;
+    --blue-color: #0099DD;
+    --red-color: #ff0000;
+    --bg-grey-color: #f9f9f9;
+    --light-grey-color: #ececec;
+    --dark-grey-color: #888888;
+  
+    /* Size */
+    --spacing: 12px;
+    --spacing-small: 6px;
+    --avatar-size: 36px;
+  
+    /* Font Size */
+    --font-large: 20px;
+    --font-regular: 16px;
+    --font-medium: 14px;
+    --font-small: 12px;
+    --font-micro: 10px;
+
+    --font-regular: "regular"
+}
+  
+.age_container {
+    width: 650px;
+    height: 310px;
+
+    padding: 10px;
+    border-radius: 15px;
+
+    background-color: var(--bg-grey-color);
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.15);
+
+    
+}
+
+.title {
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.age_content {
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+}
+
+.age_description {
+    font-size: 18px;
+}
+
+#statData {
+    font-weight: bold;
+    color: var(--blue-color);
+}

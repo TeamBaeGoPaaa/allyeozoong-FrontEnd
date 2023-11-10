@@ -1,0 +1,55 @@
+:root {
+  /* Color */
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --blue-color: #0099dd;
+  --red-color: #ff0000;
+  --bg-grey-color: #f9f9f9;
+  --light-grey-color: #ececec;
+  --dark-grey-color: #888888;
+
+  /* Size */
+  --spacing: 12px;
+  --spacing-small: 6px;
+  --avatar-size: 36px;
+
+  /* Font Size */
+  --font-large: 20px;
+  --font-regular: 16px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+
+  --font-regular: "regular";
+}
+
+.Card-container {
+  width: 240px;
+  height: 320px;
+  background-color: var(--bg-grey-color);
+
+  padding: 10px;
+  border-radius: 15px;
+
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+  margin: auto;
+}
+
+.Card-container .title {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 10px 5px;
+}
+
+.Card-container .content {
+  color: var(--dark-grey-color);
+  font-size: 12px;
+  margin: 20px 5px;
+}
+.Card-container .news_img {
+  border-radius: 7px;
+  width: 200px;
+  height: 140px;
+  margin-left: 10px;
+}
