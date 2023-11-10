@@ -55,7 +55,7 @@ function Chatbotgpt() {
       <div> 관련 증상 : {data?.related_symptom} </div>
       <div> {data?.risk} </div>
 
-      <div>isLoading : {isLoading ? "loading..." : "카톡왔다."}</div>
+      <div>isLoading : {isLoading ? "loading..." : "답장이 왔구나ㅏㅏ~."}</div>
     </>
   );
 }
