@@ -63,7 +63,7 @@ function ChatPage() {
     <>
       
       <div className="header">
-        <Header selected="고민상담" menu1="건강소식" menu2="나의 건강데이터" />
+        <Header />
       </div>
 
       <div className="body">
