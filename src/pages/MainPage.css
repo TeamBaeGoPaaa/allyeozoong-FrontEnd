@@ -9,3 +9,15 @@
   justify-content: space-between;
   margin: 10% 10%;
 }
+
+.cards .Card-layout .Card-container .title {
+  text-decoration-line: none;
+}
+
+.cards .Card-layout {
+  transition: all 0.7s;
+}
+
+.cards .Card-layout:hover {
+  transform: translateY(-30px);
+}
