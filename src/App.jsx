@@ -9,8 +9,6 @@ function App() {
   return (
     <>
       <Router>
-        {/* <Header /> */}
-
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/ChatPage" element={<ChatPage />} />

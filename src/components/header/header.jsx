@@ -1,37 +1,34 @@
 import "./header.css";
 import logo from "../../img/logo.svg";
-import { useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
-function Header(props) {
-  const navigate = useNavigate();
-
-  const handleMainPage = () => {
-    navigate("/");
-  };
-
-  const handleChatPage = () => {
-    navigate("/ChatPage");
-  };
-
-  const { selected, menu1, menu2 } = props;
-
+function Header() {
   return (
     <>
       <div id="header">
-        <img
-          onClick={handleMainPage}
-          id="logo"
-          src={logo}
-          alt="allyeozoong logo"
-        />
+        <Link to="/">
+          <img id="logo" src={logo} alt="allyeozoong logo" />
+        </Link>
 
-        <button onClick={handleMainPage} id="selected" className="header_menu">
-          {selected}
-        </button>
-        <button onClick={handleChatPage} className="header_menu">
-          {menu1}
-        </button>
-        <button className="header_menu">{menu2}</button>
+        <NavLink
+          className={({ isActive }) => {
+            return isActive ? "header_menu_selected" : "header_menu";
+          }}
+          to="/"
+        >
+          건강소식
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) => {
+            return isActive ? "header_menu_selected" : "header_menu";
+          }}
+          to="/ChatPage"
+        >
+          고민상담
+        </NavLink>
+
+        <NavLink className="header_menu">나의 건강데이터</NavLink>
 
         <div id="login">
           <button className="loginbutton">회원가입</button>

@@ -45,6 +45,19 @@
   color: var(--dark-grey-color);
   border: 0;
   background: none;
+  text-decoration-line: none;
+  font-size: 13.4px;
+}
+
+.header_menu_selected {
+  margin-left: 3%;
+  color: var(--dark-grey-color);
+  border: 0;
+  background: none;
+  font-weight: bold;
+  color: var(--blue-color);
+  text-decoration-line: none;
+  font-size: 13.4px;
 }
 
 #selected {

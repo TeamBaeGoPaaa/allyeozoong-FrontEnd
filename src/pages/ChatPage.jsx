@@ -1,6 +1,5 @@
 import "./ChatPage.css";
 import Header from "../components/header/header.jsx";
-import Chatbot from "../components/Chatbot/Chatbot";
 import Stat from "../components/Stat/Stat";
 import AgeStat from "../components/Stat/ageStat.jsx";
 import Chatbotgpt from "../components/Chatbot/Chatbotgpt.jsx";
@@ -52,7 +51,7 @@ function ChatPage() {
   return (
     <>
       <div className="header">
-        <Header selected="고민상담" menu1="건강소식" menu2="나의 건강데이터" />
+        <Header />
       </div>
 
       <div className="body">
