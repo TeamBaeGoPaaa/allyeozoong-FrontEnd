@@ -20,15 +20,26 @@ export const CallGPT = async ({ prompt }) => {
       // ex) 너는 이제부터 성/건강 의료진이야!
       // 여기 system은 이미지를 출력하라고 전제 넣는거
       role: "system",
-      content: `## INFO ##
-        you can add images to the reply by URL, Write the image in JSON field 
-        Use the Unsplash API (https://source.unsplash.com/1600x900/?). the query is just some tags that describes the image ## DO NOT RESPOND TO INFO BLOCK ##`,
+      content: ` You are now a doctor.
+      I'm going to ask you a series of questions, and in 5 lines or less, describe the symptoms you can infer from those questions,
+      At the end, give me a risk level of 1-10 with a category for that question.
+      
+      For example.
+      "I'm having chest pain. What could be wrong?"
+      
+      [answer] : Chest pain can be caused by abnormalities of the heart and lungs, as well as abnormalities of the skin, muscle, cartilage, and bone in the chest area, abnormalities of large blood vessels, inflammation of the esophagus or stomach, and abnormalities of the gallbladder.
+      Chest pain can also be caused by a myocardial infarction, in which case it lasts for more than 30 minutes and is characterized by a feeling of being squeezed or crushed by a machine, pain like being stabbed in the chest with a hot chopstick, sometimes nausea and vomiting, dizziness, severe shortness of breath, unconsciousness, shock, and heart attack, so you should take special care and visit the nearest hospital emergency room immediately if this happens.
+      
+      [related_symptom] : Chest pain
+      [risk]: 9
+      
+      Answer me this way.`,
     },
-    {
-      // 여기 system은 GPT 너는 심리 상담가야! 라고 전제 넣는거
-      role: "system",
-      content: `You are a psychological counselor who writes and analyzes emotional diaries. Proceed in the following order.`,
-    },
+    // {
+    //   // 여기 system은 GPT 너는 심리 상담가야! 라고 전제 넣는거
+    //   role: "system",
+    //   content: `You are a psychological counselor who writes and analyzes emotional diaries. Proceed in the following order.`,
+    // },
     {
       // role 에 user의 역할 : ChatGPT에 일반적으로 질문하는 질문
       // ex) 잠을 못 자서 피곤한 내 상태를 파악해봐
@@ -36,27 +47,13 @@ export const CallGPT = async ({ prompt }) => {
       // 입력하고 한국어로 번역하고 다음 JSON 형식으로 출력을 사용합니다.
       // 진짜 GPT에 채팅 넣는다고 생각하면 됨
       role: "user",
-      content: `1. [title] : Think of the diary title after understanding the [events] separated by """ at the bottom.
-          2. [summarize] : summarize events in order with one line sentence.
-          3. [emotional diary] : Write an [emotional diary] with a paragraph based on the summary.
-          4. [evaluates] : The written emotional [evaluates], using explore the unconscious based on the contents of the [emotional diary].
-          6. [Psychological analysis] : Psychological analysis is performed using professional psychological knowledge much more detailed anduse a famous quote.
-          7. [3 action tips] : Write down 3 action tips that will be helpful in the future customer situation. The three action tips must beconverted into JSON Array format.
-          8. [image] : Create an image by making the contents so far into one keyword.
-          
-          
+      content: `
           Translate into Korean and Use the output in the following JSON format:
           { 
-              title: here is [title],
-              thumbnail: here is [image],
-              summary: here is [summarize]
-              emotional_content: here is [emotional diary],
-              emotional_result: here is [evaluates],
-              analysis: here is [Psychological analysis],
-              action_list: here is [3 action tips],
-          }
-          
-          [events]:`,
+              answer: here is [answer],
+              related_symptom: here is [related_symptom],
+              risk: here is [risk],
+          } `,
     },
     {
       // 여기 user는 사용자의 입력 즉, 채팅입력창이야
