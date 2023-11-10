@@ -7,7 +7,7 @@ import { ResponsivePie } from '@nivo/pie'
 // no chart will be rendered.
 // website examples showcase many properties,
 // you'll often use just a few of them.
-const Piechart = ({ data /* see data tab */ }) => (
+const AgePiechart = ({ data /* see data tab */ }) => (
     <ResponsivePie
         data={data}
         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
@@ -15,8 +15,8 @@ const Piechart = ({ data /* see data tab */ }) => (
         endAngle={-360}
         sortByValue={true}
         activeOuterRadiusOffset={8}
-        colors={{ scheme: 'blues' }}
-        enableArcLinkLabels={false}
+        colors={{ scheme: 'pastel2' }}
+        enableArcLinkLabels={true}
         arcLinkLabelsSkipAngle={10}
         arcLinkLabelsTextColor="#333333"
         arcLinkLabelsThickness={2}
@@ -36,4 +36,4 @@ const Piechart = ({ data /* see data tab */ }) => (
     />
 )
 
-export default Piechart;
+export default AgePiechart;

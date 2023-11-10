@@ -7,7 +7,7 @@ function Stat(props) {
 
   return (
     <>
-        <div className="container">
+        <div className="stat_container">
             <div className="title">{title}</div>
             <div className="content">
                 <div className="graph">
