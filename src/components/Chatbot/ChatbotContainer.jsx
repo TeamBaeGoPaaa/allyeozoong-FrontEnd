@@ -87,7 +87,8 @@ const ChatbotContainer = ({ props }) => {
 
   const submitText = () => {
     //위험도 데이터전송
-    props.propFunction(data?.risk);
+    console.log("ㅋㅋzzz");
+    // props.propFunction(data?.risk);
   };
 
   return (
@@ -116,6 +117,16 @@ const ChatbotContainer = ({ props }) => {
         <div className="chatbot_sender">
           <InsertMessage onInsert={onInsert} />
           <MessageList sends={sender} reply={reply} />
+
+          {data && (
+            <button
+              id="showGraph"
+              onClick={submitText}
+              style={{ display: !isLoading ? "block" : "none" }}
+            >
+              그래프 보기
+            </button>
+          )}
         </div>
       </div>
     </>
