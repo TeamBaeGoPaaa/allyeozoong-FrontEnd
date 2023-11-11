@@ -41,16 +41,17 @@ const ChatbotContainer = ({props}) => {
 
 
   //사용자 메시지 추가 코드
-  //const nextId = useRef(2);
+  const nextId = useRef(1);
   const onInsert = useCallback( (text) => {
     const question = {
-        id: sender.length+1,
+        id: nextId.current,
         text,
     };
-    setSender([...sender, question]);
-  }, [sender]);
+    setSender((sender)=>sender.concat(question));
+    nextId.current++;
+  }, []);
 
-  console.log(sender);
+ 
 
   const submitText = () => {       //위험도 데이터전송
     props.propFunction(data?.risk);
@@ -78,8 +79,6 @@ const ChatbotContainer = ({props}) => {
 
         <div className = "sender_message">
             <InsertMessage onInsert = {onInsert} />
-            
-            
             <MessageList sends = {sender} />
         </div>
           
