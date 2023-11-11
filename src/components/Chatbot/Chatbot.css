@@ -123,6 +123,7 @@
   margin-left: 5px;
 }
 
+/* 내가 보낸 채팅 스타일 */
 #chatbot_sendList {
   list-style-type: none;
 
