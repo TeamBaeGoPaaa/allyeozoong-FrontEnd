@@ -1,16 +1,19 @@
 import './ageStat.css'
-import Piechart from '../Piechart/Piechart';
+import AgePiechart from '../Piechart/AgePiechart';
 
 function AgeStat(props) {
 
-  const { title, pre, statData, post } = props;
+  const { title, pre, statData, post, chartData } = props;
 
   return (
     <>
-        <div className="age_container">
+        <div className="stat_container">
             <div className="title">{title}</div>
-            <div className="age_content">
-                <div className = "age_description" >
+            <div className="content">
+                <div className="graph">
+                  <AgePiechart id = "pieChart" data = {chartData} />
+                </div>
+                <div className = "description" >
                   <span className="text">{pre}</span>
                   <span id="statData" className="text">{statData}</span>
                   <span className="text">{post}</span>

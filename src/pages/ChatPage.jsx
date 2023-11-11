@@ -18,48 +18,56 @@ function ChatPage() {
     }
   }, []);
 
+  const [data, setData] = useState(0);
+  const highFunction = (dangerData) => {
+    setData(dangerData);
+  };
+
   const danger = [
     {
       id: "remainder",
-      value: 40,
+      value: 100 - data,
     },
     {
       id: "percentage",
-      value: 60,
+      value: data,
     },
   ];
 
-  const data = [
+  const frequency = [
     {
       id: "remainder",
       value: 20,
-      age: 40,
     },
     {
       id: "percentage",
       value: 80,
-      age: {
-        20: 1,
-        40: 4,
-        30: 1,
-      },
     },
   ];
 
   const age = [
     {
       id: "20",
-      value: 4,
+      value: 3,
     },
     {
       id: "40",
-      value: 1,
+      value: 8,
     },
     {
       id: "30",
       value: 2,
     },
   ];
+
+  let temp = 0;
+  let maxAge = "";
+  for (let i in age) {
+    if (temp < age[i].value) {
+      temp = age[i].value;
+      maxAge = age[i].id;
+    }
+  }
 
   return (
     <>
@@ -69,36 +77,30 @@ function ChatPage() {
 
       <div className="body">
         <div className="chatbot">
-          <Chatbotgpt />
+          <Chatbotgpt propFunction={highFunction} />
         </div>
         <div className="Card">
           <Stat
             title="질병 위험도"
             pre="해당 증상의 잠재적 위험도는 약 "
-            statData={`${danger[1].value}%`}
+            statData={`${data}%`}
             post=" 입니다."
             chartData={danger}
           />
           <Stat
             title="빈도"
             pre="약 "
-            statData={`${data[0].value}%`}
+            statData={`${frequency[0].value}%`}
             post=" 의 사용자가 해당 증상에 대해 질문했던 경험이 있습니다."
-            chartData={data}
+            chartData={frequency}
           />
-          <Stat
+          <AgeStat
             title="연령대"
             pre="해당 증상에 대한 질문은 "
-            statData={`${age[0].id}대`}
+            statData={`${maxAge}대`}
             post=" 에서 가장 많았습니다."
             chartData={age}
           />
-          {/* <AgeStat
-            title="연령대"
-            pre="해당 증상에 대한 질문은  "
-            statData={`${data[1].age}대`}
-            post="에서 가장 많았습니다."
-          /> */}
         </div>
       </div>
     </>
