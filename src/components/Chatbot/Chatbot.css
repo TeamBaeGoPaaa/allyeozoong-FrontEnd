@@ -38,6 +38,7 @@
 .chatbot_response {
   display: flex;
   align-items: flex-start;
+  margin-bottom: 10px;
 }
 
 .chatbot_response img {
@@ -55,8 +56,8 @@
 }
 
 .response_content {
-  width: 380px;
-  height: 250px;
+  width: 400px;
+  height: auto;
   background-color: var(--light-grey-color);
   padding: 18px 20px;
   border-radius: 15px;
@@ -90,20 +91,26 @@
 }
 
 #chatbot_inputArea {
-  width: 650px;
   display: flex;
   align-items: center;
   position: absolute;
   bottom: 0;
   margin-bottom: 15px;
+  margin-left: 6px;
 }
 
 #chatbot_inputArea textarea {
-  width: 550px;
+  width: 540px;
   height: 40px;
   border: 0;
   background-color: var(--light-grey-color);
   border-radius: 40px;
+  flex: 1;
+  padding: 10px 20px;
+}
+
+#chatbot_inputArea textarea:focus {
+  outline: none;
 }
 
 #chatbot_inputArea button {
@@ -114,6 +121,30 @@
   color: white;
   border-radius: 50px;
   margin-left: 5px;
+}
+
+#chatbot_sendList {
+  list-style-type: none;
+
+  background-color: #023059;
+  color: white;
+
+  padding: 8px 20px;
+  border-radius: 20px;
+
+  float: right;
+  margin: 7px 30px;
+
+  width: 300px;
+}
+
+#chatbot_responseList {
+  width: 400px;
+  height: auto;
+  background-color: var(--light-grey-color);
+  padding: 18px 20px;
+  border-radius: 15px;
+  margin-top: 5px;
 }
 
 /* .stat_container {

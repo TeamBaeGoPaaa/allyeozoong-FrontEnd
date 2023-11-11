@@ -20,14 +20,13 @@ export const CallGPT = async ({ prompt }) => {
       // ex) 너는 이제부터 성/건강 의료진이야!
       // 여기 system은 이미지를 출력하라고 전제 넣는거
       role: "system",
-      content: ` You are now a doctor.
-      I'm going to ask you a series of questions, and in 5 lines or less, describe the symptoms you can infer from those questions,
-      At the end, give me a risk level of 1-10 with a category for that question.
+      content: ` From now on, you are a doctor.
+      I'm going to ask you a series of questions, and in 7 lines or less, describe the symptoms you can infer from those questions,
+      At the end, give me a category for that question and a percentage risk.
       
-      For example.
-      "I'm having chest pain. What could be wrong?"
-      
-      [answer] : Chest pain can be caused by abnormalities of the heart and lungs, as well as abnormalities of the skin, muscle, cartilage, and bone in the chest area, abnormalities of large blood vessels, inflammation of the esophagus or stomach, and abnormalities of the gallbladder.
+      Sample questions include
+      Example question: "I have chest pain, what could be wrong?"
+      Answer: Chest pain can be caused by abnormalities of the heart and lungs, as well as abnormalities of the skin, muscle, cartilage, and bone in the chest area, abnormalities of large blood vessels, inflammation of the esophagus or stomach, and abnormalities of the gallbladder.
       Chest pain can also be caused by a myocardial infarction, in which case it lasts for more than 30 minutes and is characterized by a feeling of being squeezed or crushed by a machine, pain like being stabbed in the chest with a hot chopstick, sometimes nausea and vomiting, dizziness, severe shortness of breath, unconsciousness, shock, and heart attack, so you should take special care and visit the nearest hospital emergency room immediately if this happens.
       
       [related_symptom] : Relevant symptoms should be one word, no "," e.g. "depression"
