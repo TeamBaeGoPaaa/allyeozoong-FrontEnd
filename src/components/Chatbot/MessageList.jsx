@@ -1,13 +1,14 @@
 import { createElement } from "react";
 import PrintSend from "./PrintSend";
 
-function MessageList({ sends }) {
+function MessageList({ sends, reply }) {
   //console.log(sends);
   //const { sends } = props;
   //   console.log(sends);
   //   sends.map((element) => console.log(element));
 
   //   createElement;
+  console.log(sends, reply);
 
   return (
     <>

@@ -13,6 +13,8 @@ const dummyData = JSON.parse(
   "risk": "" }`
 );
 
+const intro = dummyData.answer.replace(/\\n/g, "<br />");
+
 const ChatbotContainer = ({ props }) => {
   const [data, setData] = useState(dummyData); //GPT 답장
   const [isLoading, setIsLoading] = useState(false); //로딩 상태
@@ -72,8 +74,9 @@ const ChatbotContainer = ({ props }) => {
     console.log("답장 : ", question2.text2);
   });
 
-  console.log(sender);
-  console.log(reply);
+  // 이걸로 값 확인하기########################
+  // console.log(sender);
+  // console.log(reply);
 
   // let value;
   // sender.forEach((item, index) => {
@@ -106,14 +109,13 @@ const ChatbotContainer = ({ props }) => {
             </div>
             <div> {isLoading ? "loading..." : ""}</div>
           </div>
-
           {/* 여기 */}
         </div>
 
         {/* chatbot_sender는 스타일없는 그냥 div */}
         <div className="chatbot_sender">
           <InsertMessage onInsert={onInsert} />
-          <MessageList sends={sender} />
+          <MessageList sends={sender} reply={reply} />
         </div>
       </div>
     </>
