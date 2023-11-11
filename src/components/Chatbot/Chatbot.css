@@ -38,6 +38,7 @@
 .chatbot_response {
   display: flex;
   align-items: flex-start;
+  margin-bottom: 10px;
 }
 
 .chatbot_response img {
@@ -124,6 +125,26 @@
 
 #chatbot_sendList {
   list-style-type: none;
+
+  background-color: #023059;
+  color: white;
+
+  padding: 8px 20px;
+  border-radius: 20px;
+
+  float: right;
+  margin: 7px 30px;
+
+  width: 300px;
+}
+
+#chatbot_responseList {
+  width: 400px;
+  height: auto;
+  background-color: var(--light-grey-color);
+  padding: 18px 20px;
+  border-radius: 15px;
+  margin-top: 5px;
 }
 
 /* .stat_container {

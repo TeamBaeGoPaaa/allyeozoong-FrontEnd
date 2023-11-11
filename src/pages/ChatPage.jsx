@@ -24,6 +24,8 @@ function ChatPage() {
     setData(dangerData);
   };
 
+  
+
   const danger = [
     {
       id: "remainder",
