@@ -11,7 +11,7 @@ function InsertMessage({onInsert}) {   //콜백함수를 props로 받아오기!
   }, [])
 
 
-  const onSubmit = useCallback(async (e) => {
+  const onSubmit = useCallback( (e) => {
     if (value.trim() === ""){   //아무것도 입력 안 하면 리턴
       return;
     }

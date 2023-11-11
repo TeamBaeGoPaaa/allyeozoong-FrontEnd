@@ -7,8 +7,14 @@ import InsertMessage from './InsertMessage.jsx';
 import MessageList from './MessageList.jsx';
 import ResponseList from './ResponseList.jsx';
 
-const dummyData = JSON.parse(
+const intro = JSON.parse(
   `{ "answer": "안녕하세요, \\n 건강비서 알려종입니다😊👨‍⚕️ \\n\\n 고객님이 갖고 계신 건강 고민을 저한테 알려주세요! \\n\\n\\n예시) 두통이 자주 있어요. 무슨 문제가 있을까요?  \\n\\n 평소보다 심한 피로감이 있어요. 왜 그런지 모르겠어요.", 
+  "related_symptom": "", 
+  "risk": "" }`
+);
+
+const dummyData = JSON.parse(
+  `{ "answer": "", 
   "related_symptom": "", 
   "risk": "" }`
 );
@@ -19,7 +25,7 @@ const ChatbotContainer = ({props}) => {
   //const [userInput, setUserInput] = useState("");      //입력창
   const [ sender , setSender ] = useState([]);         //표시할 메시지를 객체로 받기
 
-   const formattedAnswer = data.answer.replace(/\\n/g, "<br />");
+   const formattedAnswer = intro.answer.replace(/\\n/g, "<br />");
 
    // GPT 메시지 받기 코드
   const handleClickAPICall = async (userInput) => {
@@ -31,7 +37,21 @@ const ChatbotContainer = ({props}) => {
         prompt: `${userInput}`,
       }); // CallGPT에서 message를 리턴 받는다.
       
-      setData(JSON.parse(message)); // JSON으로 파싱을 해야 객체로 참조할 수 있다.
+      //  // const respId = useRef(1);
+      //   const response = JSON.parse(message); 
+      //     setData((data)=>data.concat(response));
+      //     console.log(typeof(data));
+      //  //   respId.current++;
+      let content = JSON.parse(message);
+      const respId = useRef(1);
+      const response = {
+            id: respId.current,
+            info: content,
+        };
+      setData((data)=>data.concat(response));
+      respId.current++; 
+      console.log("response type" + typeof(response));
+      console.log("data" + data);
     } catch (error) {
       console.error("API 호출 중 오류:", error);
     } finally {
@@ -78,6 +98,10 @@ const ChatbotContainer = ({props}) => {
         <div className = "sender_message">
             <InsertMessage onInsert = {onInsert} />
             <MessageList sends = {sender}  />
+        </div>
+
+        <div className = "GPT_message">
+          {/* <ResponseList responses={data} /> */}
         </div>
           
       </div>

@@ -19,7 +19,7 @@ function Header(props) {
   }, []);
 
   const notLogin = () => {
-    alert("로그인을 해주세요!");
+    alert("로그인 후 이용가능합니다.");
   };
 
   return (
@@ -67,7 +67,7 @@ function Header(props) {
           {loginState ? (
             <>
               <img id="logo" src={Profile} alt="profile logo" />
-              <p className="profile">허준수님</p>
+              <p className="profile"><strong>관리자</strong> 님</p>
             </>
           ) : (
             <>

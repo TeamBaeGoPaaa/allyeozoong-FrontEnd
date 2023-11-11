@@ -56,8 +56,8 @@ export default function Login() {
             onChange={handleUserId}
           />
           <input
-            type="text"
-            // id="password"
+            type="password"
+            //id="mypassword"
             className="fadeIn third"
             name="login"
             placeholder="password"

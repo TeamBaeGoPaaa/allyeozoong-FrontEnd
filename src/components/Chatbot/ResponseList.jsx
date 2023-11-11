@@ -16,8 +16,8 @@ function ResponseList({ responses }) {
             <ul className="ResponseList">
                 {responses.map((resp) => (
                     <PrintResponse
-                        todo={todo}
-                        key={todo.id}
+                        response={resp}
+                        key={resp.id}
                     />
                 ))}
             </ul>
