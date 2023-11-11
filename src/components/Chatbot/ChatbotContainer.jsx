@@ -1,5 +1,6 @@
 import "./Chatbot.css";
 import React, { useState, useCallback, useRef, useEffect } from "react"; //useEffect, useRef
+import axios from "axios";
 import { CallGPT } from "../../api/gpt.js";
 import { FaPaperPlane } from "react-icons/fa";
 import profile from "../../img/profile.svg";
@@ -15,7 +16,8 @@ const dummyData = JSON.parse(
 
 const intro = dummyData.answer.replace(/\\n/g, "<br />");
 
-const ChatbotContainer = ({ props }) => {
+const ChatbotContainer = ({ riskFunction, freqFunction, userFunction }) => {
+  // const [riskFunction, freqFunction, userFunction] = props;
   const [data, setData] = useState(dummyData); //GPT 답장
   const [isLoading, setIsLoading] = useState(false); //로딩 상태
   //const [userInput, setUserInput] = useState("");      //입력창
@@ -87,8 +89,36 @@ const ChatbotContainer = ({ props }) => {
 
   const submitText = () => {
     //위험도 데이터전송
-    console.log("ㅋㅋzzz");
     // props.propFunction(data?.risk);
+    // props.propFunction(data?.risk * 10);
+
+    const symptom = data?.related_symptom;
+    const risk = data?.risk;
+    // console.log("지피티 호출 완료");
+    console.log(symptom, risk);
+    // 백엔드 데이터 받은거 보고 넣기
+    riskFunction(data?.risk);
+    freqFunction(data?.related_symptom); // 일단 임시로 이렇게 둠
+    userFunction(data?.risk);
+
+    // try {
+    //   console.log("백엔드호출중");
+    //   const response = await axios.post(
+    //     `https://allyeozoong.o-r.kr:8080/api/getFrequencyAndAges?symptom=${symptom}&age=10&lisk=${risk}`,
+    //     {
+    //       id: "user",
+    //     }
+    //   ); // 여러분이 사용하고자 하는 API 엔드포인트로 대체하세요.
+    //   console.log("백엔드호출완");
+    //   // const responseData = await response.json();
+    //   console.log(response);
+
+    //   // const backend_response_Frequency = response.data.Frequency;
+    //   // const backend_response_ages = response.data.ages; //얘는 배열
+    //   // const backend_response_name = response.data.name;
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
 
   return (

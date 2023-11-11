@@ -21,11 +21,20 @@ function ChatPage() {
 
   const [data, setData] = useState(0);
 
-  const highFunction = (dangerData) => {
+  const [freq, setFreq] = useState(0);
+  const [user, setUser] = useState([]);
+
+  const riskFunction = (dangerData) => {
     setData(dangerData);
   };
 
-  
+  const freqFunction = (freqData) => {
+    setFreq(freqData);
+  };
+
+  const userFunction = (userData) => {
+    setUser(userData);
+  };
 
   const danger = [
     {
@@ -82,9 +91,11 @@ function ChatPage() {
       <div className="body">
         <div className="chatbot">
           {/* <SendMessage /> */}
-          <ChatbotContainer />
-          {/* <ChatbotContainer propFunction={highFunction} /> */}
-          {/* <Chatbotgpt propFunction={highFunction} /> */}
+          {/* <ChatbotContainer /> */}
+          <ChatbotContainer
+            propFunction={(riskFunction, freqFunction, userFunction)}
+          />
+          {/* <Chatbotgpt propFunction={riskFunction} /> */}
         </div>
         <div className="Card">
           <Stat
