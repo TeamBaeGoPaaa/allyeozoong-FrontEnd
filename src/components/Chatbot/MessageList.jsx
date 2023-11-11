@@ -8,7 +8,12 @@ function MessageList({ sends }) {
     return (
         <>
             <ul className="SendList">
-                <PrintSend send={sends}  />
+                {sends.map((element) => (
+                    <PrintSend
+                    send={element}
+                    key={element.id}
+                    />
+                ))}
             </ul>
 
 

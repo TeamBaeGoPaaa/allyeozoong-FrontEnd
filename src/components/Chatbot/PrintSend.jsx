@@ -1,14 +1,12 @@
 import './Chatbot.css'
 
-const PrintSend = ({send}) => {
-
-    const value = send;
-    console.log(send);
+function PrintSend({send}) {
+  const {id, text} = send;
   return (
     <>
       <li id = "chatbot_sendList">
         <div>
-          <div id="chatbot_sendmessage">{value}</div>
+          <div id="chatbot_sendmessage">{text}</div>
         </div>
       </li>
       {/* {send.map((item) => (

@@ -17,21 +17,19 @@ function InsertMessage({onInsert}) {   //콜백함수를 props로 받아오기!
  
 
   const onSubmit = useCallback(e => {
-    e.preventDefault();        //자동새로고침방지
-
     if (value.trim() === ""){   //아무것도 입력 안 하면 리턴
       return;
     }
 
-    onInsert(
-      {value}
-    );            //Container에서 넘겨준 onInsert함수에 입력받은 value를 넣어줌.
+    onInsert(value);            //Container에서 넘겨준 onInsert함수에 입력받은 value를 넣어줌.
                                 //onInsert는 콜백함수이기 때문에 여기서 value값이 바뀌면 자동으로 
                                 //Container에서 onInsert가 호출되면서 거기 새로운 객체가 추가됨!!
     setValue('');               //입력창 초기화
+    e.preventDefault();        //자동새로고침방지
     
   }, [onInsert, value]);
 
+  //console.log(typeof(value));
 
 
   // //입력창에서 입력값 받기

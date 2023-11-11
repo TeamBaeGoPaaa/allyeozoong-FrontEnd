@@ -41,20 +41,17 @@ const ChatbotContainer = ({props}) => {
 
 
   //사용자 메시지 추가 코드
-  const nextId = useRef(2);
+  const nextId = useRef(1);
   const onInsert = useCallback( (text) => {
-    const question = text;
-    setSender((sender) => sender.concat(question));
+    const question = {
+        id: nextId.current,
+        text,
+    };
+    setSender((sender)=>sender.concat(question));
     nextId.current++;
   }, []);
 
-  // console.log(typeof(sender.toString()));
-  useEffect(() => {
-    
-      setSender(sender.toString());
-    
-  }, []);
-
+ 
   console.log(sender);
 
   // let value;
