@@ -1,5 +1,5 @@
 import './Chatbot.css'
-import React, { useState,  useCallback, useRef } from "react";   //useEffect, useRef
+import React, { useState,  useCallback, useRef, useEffect } from "react";   //useEffect, useRef
 import { CallGPT } from "../../api/gpt.js";
 import { FaPaperPlane } from 'react-icons/fa';
 import profile from '../../img/profile.svg';
@@ -41,16 +41,28 @@ const ChatbotContainer = ({props}) => {
 
 
   //사용자 메시지 추가 코드
-  //const nextId = useRef(2);
+  const nextId = useRef(2);
   const onInsert = useCallback( (text) => {
-    const question = {
-        id: sender.length+1,
-        text,
-    };
-    setSender([...sender, question]);
-  }, [sender]);
+    const question = text;
+    setSender((sender) => sender.concat(question));
+    nextId.current++;
+  }, []);
+
+  // console.log(typeof(sender.toString()));
+  useEffect(() => {
+    
+      setSender(sender.toString());
+    
+  }, []);
 
   console.log(sender);
+
+  // let value;
+  // sender.forEach((item, index) => {
+  //   Object.keys(item).forEach(key => {
+  //     value = item[key];
+  //   });
+  // });
 
   const submitText = () => {       //위험도 데이터전송
     props.propFunction(data?.risk);
@@ -78,8 +90,6 @@ const ChatbotContainer = ({props}) => {
 
         <div className = "sender_message">
             <InsertMessage onInsert = {onInsert} />
-            
-            
             <MessageList sends = {sender} />
         </div>
           

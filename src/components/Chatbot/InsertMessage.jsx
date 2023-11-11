@@ -7,12 +7,12 @@ function InsertMessage({onInsert}) {   //콜백함수를 props로 받아오기!
 // const handleUserInput = (e) => {
   //   setUserInput(e.target.value);
   // };
-  // const onChange = (e) => {
-  //   setValue(e.target.value);
-  // };
-  const onChange = useCallback( e => {
+  const onChange = (e) => {
     setValue(e.target.value);
-  }, [])
+  };
+  // const onChange = useCallback( e => {
+  //   setValue(e.target.value);
+  // }, [])
 
  
 
@@ -23,10 +23,9 @@ function InsertMessage({onInsert}) {   //콜백함수를 props로 받아오기!
       return;
     }
 
-    onInsert(prevMessages => [
-      ...prevMessages,
-      {id:Date.now(), text:value}
-    ]);            //Container에서 넘겨준 onInsert함수에 입력받은 value를 넣어줌.
+    onInsert(
+      {value}
+    );            //Container에서 넘겨준 onInsert함수에 입력받은 value를 넣어줌.
                                 //onInsert는 콜백함수이기 때문에 여기서 value값이 바뀌면 자동으로 
                                 //Container에서 onInsert가 호출되면서 거기 새로운 객체가 추가됨!!
     setValue('');               //입력창 초기화
