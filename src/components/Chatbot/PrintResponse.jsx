@@ -12,13 +12,12 @@ import profile from '../../img/profile.svg'
 //   "risk": "평소보다 심한 피로감이 있어요. 왜 그럴까요?" }`
 // )
 
-function PrintResponse({send}) {
+function PrintResponse({response}) {
+  const {id, text} = response;
   return (
     <>
-      <li id = "chatbot_sendList">
-        <div>
-          <div id="chatbot_sendmessage">{send}</div>
-        </div>
+      <li id = "chatbot_responseList">
+        {text}
       </li>
     </>
   );

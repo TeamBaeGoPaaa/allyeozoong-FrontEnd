@@ -1,10 +1,16 @@
+import { createElement } from "react";
 import PrintSend from "./PrintSend";
 
 function MessageList({ sends }) {
 
-    console.log(sends);
+    //console.log(sends);
     //const { sends } = props;
+    console.log(sends);
+    sends.map((element) => (
+        console.log(element)
+    ))
 
+    createElement
     return (
         <>
             <ul className="SendList">

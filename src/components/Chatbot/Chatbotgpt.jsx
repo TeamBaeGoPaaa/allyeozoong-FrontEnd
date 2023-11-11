@@ -24,13 +24,6 @@ function Chatbotgpt(props) {
 
   const formattedAnswer = data.answer.replace(/\\n/g, "<br />");
 
-  // function addMessage(sender, sendMessage) {
-  //   const messageElement = document.createElement('div');
-  //   messageElement.className = 'sendMessage';
-  //   messageElement.textContent = `${sender}: ${sendMessage}`;
-  //   chatMessages.prepend(messageElement);
-  // }
-
   const handleClickAPICall = async () => {
     try {
       setIsLoading(true); // message 가져오는 동안 로딩

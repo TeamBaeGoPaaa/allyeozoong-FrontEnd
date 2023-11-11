@@ -5,9 +5,7 @@ function PrintSend({send}) {
   return (
     <>
       <li id = "chatbot_sendList">
-        <div>
-          <div id="chatbot_sendmessage">{text}</div>
-        </div>
+        {text}
       </li>
     </>
   );
