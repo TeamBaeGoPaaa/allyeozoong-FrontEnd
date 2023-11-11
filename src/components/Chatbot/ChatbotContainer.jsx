@@ -1,5 +1,5 @@
 import './Chatbot.css'
-import React, { useState,  useCallback, useRef } from "react";   //useEffect, useRef
+import React, { useState,  useCallback, useRef, useEffect } from "react";   //useEffect, useRef
 import { CallGPT } from "../../api/gpt.js";
 import { FaPaperPlane } from 'react-icons/fa';
 import profile from '../../img/profile.svg';
@@ -70,6 +70,16 @@ const ChatbotContainer = ({props}) => {
     nextId.current++;
     handleClickAPICall(question.text);
   }, []);
+
+ 
+  console.log(sender);
+
+  // let value;
+  // sender.forEach((item, index) => {
+  //   Object.keys(item).forEach(key => {
+  //     value = item[key];
+  //   });
+  // });
 
   const submitText = () => {       //위험도 데이터전송
     props.propFunction(data?.risk);
