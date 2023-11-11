@@ -69,7 +69,7 @@ function Chatbotgpt(props) {
   }, []);
 
   const submitText = async () => {
-    // props.propFunction(data?.risk * 10);
+    props.propFunction(data?.risk * 10);
 
     const symptom = data?.related_symptom;
     const risk = data?.risk;
@@ -84,7 +84,12 @@ function Chatbotgpt(props) {
         }
       ); // 여러분이 사용하고자 하는 API 엔드포인트로 대체하세요.
       console.log("백엔드호출완");
+      // const responseData = await response.json();
       console.log(response);
+
+      const backend_response_Frequency = response.data.Frequency;
+      const backend_response_ages = response.data.ages; //얘는 배열
+      const backend_response_name = response.data.name;
     } catch (error) {
       console.log(error);
     }

@@ -19,6 +19,7 @@ function ChatPage() {
   }, []);
 
   const [data, setData] = useState(0);
+
   const highFunction = (dangerData) => {
     setData(dangerData);
   };
