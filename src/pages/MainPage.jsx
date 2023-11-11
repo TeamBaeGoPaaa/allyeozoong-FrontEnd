@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Header from "../components/header/header.jsx";
 import Onboarding from "../components/onboarding/onboarding.jsx";
 import Card from "../components/Card/Card.jsx";
@@ -9,13 +10,24 @@ import news3 from "../img/news3.jpg";
 import news4 from "../img/news4.jpg";
 
 export default function MainPage() {
+  const [useLogin, setUserLogin] = useState();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state) {
+      // console.log(location.state);
+      setUserLogin(location.state.user);
+    }
+  }, []);
+  // console.log(useLogin);
+
   return (
     <>
       <div className="header">
-        <Header />
+        <Header loginState={useLogin} />
       </div>
 
-      <Onboarding />
+      <Onboarding loginState={useLogin} />
 
       <div className="cards">
         <Link
