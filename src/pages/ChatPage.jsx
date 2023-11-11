@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "./ChatPage.css";
 import Header from "../components/header/header.jsx";
 import Stat from "../components/Stat/Stat";
@@ -5,6 +7,17 @@ import AgeStat from "../components/Stat/ageStat.jsx";
 import Chatbotgpt from "../components/Chatbot/Chatbotgpt.jsx";
 
 function ChatPage() {
+  const [useLogin, setUserLogin] = useState();
+  const location = useLocation();
+  console.log(useLogin);
+
+  useEffect(() => {
+    if (location.state) {
+      console.log(location.state);
+      setUserLogin(location.state.user);
+    }
+  }, []);
+
   const danger = [
     {
       id: "remainder",
@@ -51,7 +64,7 @@ function ChatPage() {
   return (
     <>
       <div className="header">
-        <Header />
+        <Header loginState={useLogin} />
       </div>
 
       <div className="body">

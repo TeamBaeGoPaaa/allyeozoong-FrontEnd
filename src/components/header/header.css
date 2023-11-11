@@ -71,6 +71,7 @@
   width: 115px;
   display: flex;
   justify-content: space-between;
+  height: 24px;
 }
 
 .loginbutton {
