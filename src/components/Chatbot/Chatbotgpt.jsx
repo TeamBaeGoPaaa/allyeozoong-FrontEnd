@@ -1,9 +1,8 @@
-import './Chatbotgpt.css'
+import "./Chatbotgpt.css";
 import { useState } from "react";
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import { CallGPT } from "../../api/gpt.js";
-import profile from '../../img/profile.svg'
-
+import profile from "../../img/profile.svg";
 
 // 새로고칠 때마다 GPT로 호출하면 돈이드니 더미데이터 활용해서 호출한 데이터 저장
 // const dummyData = JSON.parse(
@@ -17,12 +16,11 @@ const dummyData = JSON.parse(
   "risk": "" }`
 );
 
-
 function Chatbotgpt(props) {
   const [data, setData] = useState(dummyData); //데이터 기본 값에 더비데이터 넣는다.
   const [isLoading, setIsLoading] = useState(false);
   const [userInput, setUserInput] = useState("");
-  const [chatHistory, setChatHistory] = useState([]); 
+  const [chatHistory, setChatHistory] = useState([]);
 
   const formattedAnswer = data.answer.replace(/\\n/g, "<br />");
 
@@ -55,11 +53,11 @@ function Chatbotgpt(props) {
 
   const handleSubmit = () => {
     //console.log(">> userInput", userInput);
-    if (userInput.trim() === ""){
+    if (userInput.trim() === "") {
       return;
     }
 
-    const newChat = { type: 'user', content: userInput };
+    const newChat = { type: "user", content: userInput };
     setChatHistory((prevChatHistory) => [...prevChatHistory, newChat]);
 
     setUserInput("");
@@ -71,26 +69,30 @@ function Chatbotgpt(props) {
 
   const submitText = () => {
     props.propFunction(data?.risk * 10);
-  }
+  };
 
   return (
     <>
-      <div className = "chatbot_container">
-          {/* <button onClick={handleClickAPICall}>GPT API call</button> */}
-          {/* <div>data : {JSON.stringify(data)}</div> */}
-          {/* <div>알려종 : {data}</div> */}
-        <div className = "chatbot_response">
+      <div className="chatbot_container">
+        {/* <button onClick={handleClickAPICall}>GPT API call</button> */}
+        {/* <div>data : {JSON.stringify(data)}</div> */}
+        {/* <div>알려종 : {data}</div> */}
+        <div className="chatbot_response">
           <img src={profile} alt="profile" />
-          <div className = "response_message">
-            <span id = "allyeozoong">알려종</span>
-            <div className = "response_content">
-              <div style={{ whiteSpace: 'pre-line' }}> {formattedAnswer}</div>
+          <div className="response_message">
+            <span id="allyeozoong">알려종</span>
+            <div className="response_content">
+              <div style={{ whiteSpace: "pre-line" }}> {formattedAnswer}</div>
               <div> {data?.related_symptom} </div>
               <div> {data?.risk} </div>
             </div>
 
-            { data && (
-              <button id = "showGraph" onClick={submitText} style={{ display: !isLoading ? 'block' : 'none' }}>
+            {data && (
+              <button
+                id="showGraph"
+                onClick={submitText}
+                style={{ display: !isLoading ? "block" : "none" }}
+              >
                 그래프 보기
               </button>
             )}
@@ -100,7 +102,7 @@ function Chatbotgpt(props) {
         <div> {isLoading ? "loading..." : ""}</div>
 
         {/* <div id = "chatbot_sendmessage"> */}
-          
+
         <div id="chatbot_sendmessage">
           {/* chatHistory를 매핑하여 각 메시지를 별도의 상자에 표시합니다. */}
           {chatHistory.map((chat, index) => (
@@ -110,15 +112,19 @@ function Chatbotgpt(props) {
           ))}
         </div>
 
-          <div id="chatbot_inputArea">
-            <textarea onChange={handleUserInput} value={userInput}></textarea>
-            <button onClick={() => {
+        <div id="chatbot_inputArea">
+          <textarea onChange={handleUserInput} value={userInput}></textarea>
+          <button
+            onClick={() => {
               handleSubmit();
               handleClickAPICall();
-            }}>전송</button>
-          </div>
+              console.log("dddd");
+            }}
+          >
+            전송
+          </button>
         </div>
-      
+      </div>
     </>
   );
 }
