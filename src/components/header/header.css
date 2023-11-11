@@ -80,3 +80,7 @@
   color: var(--dark-grey-color);
   font-weight: 600;
 }
+
+.profile {
+  color: var(--blue-color);
+}

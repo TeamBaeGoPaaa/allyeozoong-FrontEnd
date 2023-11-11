@@ -1,5 +1,6 @@
 import "./header.css";
 import logo from "../../img/logo.svg";
+import Profile from "../../img/profile.svg";
 import { Link, NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -64,7 +65,10 @@ function Header(props) {
         <div id="login">
           {/* {console.log(props)} */}
           {loginState ? (
-            <button className="loginbutton">트루</button>
+            <>
+              <img id="logo" src={Profile} alt="profile logo" />
+              <p className="profile">허준수님</p>
+            </>
           ) : (
             <>
               <Link>
