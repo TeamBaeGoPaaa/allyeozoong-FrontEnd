@@ -4,6 +4,10 @@
   font-family: "Noto Sans KR", sans-serif;
 }
 
+body {
+  height: 100vh;
+}
+
 .cards {
   display: flex;
   justify-content: space-between;

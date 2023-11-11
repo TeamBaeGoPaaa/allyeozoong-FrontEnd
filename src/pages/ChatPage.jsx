@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "./ChatPage.css";
 import Header from "../components/header/header.jsx";
 import Stat from "../components/Stat/Stat";
@@ -7,6 +8,16 @@ import ChatbotContainer from "../components/Chatbot/ChatbotContainer.jsx";
 // import SendMessage from "../components/TodoCreate/SendMessage.jsx";
 
 function ChatPage() {
+  const [useLogin, setUserLogin] = useState();
+  const location = useLocation();
+  console.log(useLogin);
+
+  useEffect(() => {
+    if (location.state) {
+      console.log(location.state);
+      setUserLogin(location.state.user);
+    }
+  }, []);
 
   const [data, setData] = useState(0);
   const highFunction = (dangerData) => {
@@ -16,7 +27,7 @@ function ChatPage() {
   const danger = [
     {
       id: "remainder",
-      value: 100-data,
+      value: 100 - data,
     },
     {
       id: "percentage",
@@ -52,19 +63,17 @@ function ChatPage() {
 
   let temp = 0;
   let maxAge = "";
-  for(let i in age){
+  for (let i in age) {
     if (temp < age[i].value) {
       temp = age[i].value;
-      maxAge = age[i].id; 
+      maxAge = age[i].id;
     }
   }
 
-
   return (
     <>
-      
       <div className="header">
-        <Header />
+        <Header loginState={useLogin} />
       </div>
 
       <div className="body">
@@ -96,7 +105,6 @@ function ChatPage() {
             post=" 에서 가장 많았습니다."
             chartData={age}
           />
-
         </div>
       </div>
     </>

@@ -71,6 +71,7 @@
   width: 115px;
   display: flex;
   justify-content: space-between;
+  height: 24px;
 }
 
 .loginbutton {
@@ -78,4 +79,8 @@
   background-color: transparent;
   color: var(--dark-grey-color);
   font-weight: 600;
+}
+
+.profile {
+  color: var(--blue-color);
 }
