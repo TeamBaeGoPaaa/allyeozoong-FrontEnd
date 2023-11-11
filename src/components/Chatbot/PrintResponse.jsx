@@ -15,7 +15,17 @@ function PrintResponse({ response }) {
   const { id2, text2 } = response;
   return (
     <>
-      <li id="chatbot_responseList">{text2}</li>
+      {/* <li id="chatbot_responseList_demo1">{text2}</li> */}
+
+      <div className="chatbot_response_demo2">
+        <img src={profile} alt="profile" />
+        <div className="response_message_demo2">
+          <span id="allyeozoong">알려종</span>
+          <div className="response_content_demo2">
+            <li style={{ whiteSpace: "pre-line" }}> {text2}</li>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
