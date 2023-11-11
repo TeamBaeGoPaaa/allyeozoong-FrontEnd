@@ -3,7 +3,8 @@ import "./ChatPage.css";
 import Header from "../components/header/header.jsx";
 import Stat from "../components/Stat/Stat";
 import AgeStat from "../components/Stat/ageStat.jsx";
-import Chatbotgpt from "../components/Chatbot/Chatbotgpt.jsx";
+import ChatbotContainer from "../components/Chatbot/ChatbotContainer.jsx";
+// import SendMessage from "../components/TodoCreate/SendMessage.jsx";
 
 function ChatPage() {
 
@@ -68,7 +69,10 @@ function ChatPage() {
 
       <div className="body">
         <div className="chatbot">
-          <Chatbotgpt propFunction={highFunction} />
+          {/* <SendMessage /> */}
+          <ChatbotContainer />
+          {/* <ChatbotContainer propFunction={highFunction} /> */}
+          {/* <Chatbotgpt propFunction={highFunction} /> */}
         </div>
         <div className="Card">
           <Stat
