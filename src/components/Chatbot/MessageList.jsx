@@ -5,7 +5,7 @@ function MessageList({ sends }) {
   //console.log(sends);
   //const { sends } = props;
   //   console.log(sends);
-  sends.map((element) => console.log(element));
+  //   sends.map((element) => console.log(element));
 
   //   createElement;
 

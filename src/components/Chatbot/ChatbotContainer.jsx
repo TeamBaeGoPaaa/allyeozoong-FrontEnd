@@ -17,10 +17,11 @@ const ChatbotContainer = ({ props }) => {
   const [data, setData] = useState(dummyData); //GPT 답장
   const [isLoading, setIsLoading] = useState(false); //로딩 상태
   //const [userInput, setUserInput] = useState("");      //입력창
-  const [sender, setSender] = useState([]); //표시할 메시지를 객체로 받기
+  const [sender, setSender] = useState([]); //표시할 보낸메시지를 객체로 받기
+  const [reply, setReply] = useState([]); //표시할 받은메시지를 객체로 받기
 
   const formattedAnswer = data.answer.replace(/\\n/g, "<br />");
-  console.log(formattedAnswer);
+  // console.log(formattedAnswer);
 
   // GPT 메시지 받기 코드
   const handleClickAPICall = async (userInput) => {
@@ -33,6 +34,12 @@ const ChatbotContainer = ({ props }) => {
       }); // CallGPT에서 message를 리턴 받는다.
 
       setData(JSON.parse(message)); // JSON으로 파싱을 해야 객체로 참조할 수 있다.
+
+      // data.answer.replace(/\\n/g, "<br />");
+      // console.log("이거나와야함 : ", JSON.parse(message));
+      // console.log(JSON.parse(message).answer.replace(/\\n/g, "<br />"));
+      const abcd = JSON.parse(message).answer.replace(/\\n/g, "<br />");
+      onInsert2(abcd);
     } catch (error) {
       console.error("API 호출 중 오류:", error);
     } finally {
@@ -49,10 +56,24 @@ const ChatbotContainer = ({ props }) => {
     };
     setSender((sender) => sender.concat(question));
     nextId.current++;
+    console.log("전송 : ", question.text);
     handleClickAPICall(question.text);
   }, []);
 
-  // console.log(sender);
+  //사용자 메시지에 대해 답장 추가 코드
+  const nextId2 = useRef(1);
+  const onInsert2 = useCallback((text2) => {
+    const question2 = {
+      id2: nextId2.current,
+      text2,
+    };
+    setReply((reply) => reply.concat(question2));
+    nextId2.current++;
+    console.log("답장 : ", question2.text2);
+  });
+
+  console.log(sender);
+  console.log(reply);
 
   // let value;
   // sender.forEach((item, index) => {
