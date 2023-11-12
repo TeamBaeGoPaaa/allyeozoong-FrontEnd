@@ -12,9 +12,11 @@ E타입 - 청년을 위한 SW 💪
 
 ![](https://velog.velcdn.com/images/yooonwodyd/post/65f2d0b1-b1e1-4f42-aead-cd5d6f93b4b1/image.gif)
 
-<img width="630" alt="image" src="https://github.com/TeamBaeGoPaaa/allyeozoong-FrontEnd/assets/108808701/7c3335d0-bbd1-4866-92ae-98b6a995972e">
+![image](https://github.com/TeamBaeGoPaaa/allyeozoong-FrontEnd/assets/108808701/d1b3b0cb-cf63-40bf-ae56-8cb7274ad224)
 
-<img width="330" alt="image" src="https://github.com/TeamBaeGoPaaa/allyeozoong-FrontEnd/assets/108808701/5f17f02b-585a-47ae-8b4e-ae18e0262f2c">
+![image](https://github.com/TeamBaeGoPaaa/allyeozoong-FrontEnd/assets/108808701/586d5e65-9804-4f2e-bc18-f8473632f3a2)
+
+
 
 
 ## 프로젝트에 활용된 기술
@@ -43,7 +45,7 @@ centOS 서버 대여한 뒤 배포 후 도메인과 SSL 인증서를 발급받�
 
 ```
   프론트엔드는 vercel , 백엔드는 centOS 서버를 대여받아 각각 배포하여 통신하는 구조로 웹 사이트를 구성하였습니다.
-  이 때 https로 배포된 프론트 서버의 보단 안전한 통신을 위해 Let's Encrpty 기관으로부터 SSL 인증서를 발급받아 적용하였습니다.
+  이 때 https로 배포된 프론트 서버의 보단 안전한 통신을 위해 Let's Encrypt 기관으로부터 SSL 인증서를 발급받아 적용하였습니다.
 ```
 ## 3. GPT-3.5 turbo API  Fine-Tuning
 *증상의 정도 측정* *해결방안+상담진행*
