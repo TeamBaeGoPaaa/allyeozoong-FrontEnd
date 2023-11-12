@@ -1,10 +1,12 @@
 import "./Chatbot.css";
+import "../../pages/ChatPage.css";
 import React, { useState, useCallback, useRef, useEffect } from "react"; //useEffect, useRef
 import axios from "axios";
 import { CallGPT } from "../../api/gpt.js";
 import profile from "../../img/profile.svg";
 import InsertMessage from "./InsertMessage.jsx";
 import MessageList from "./MessageList.jsx";
+import loading from "../../img/loading.gif";
 
 const dummyData = JSON.parse(
   `{ "answer": "더미데이터", 
@@ -136,11 +138,15 @@ const ChatbotContainer = ({
             <div className="intro_content">
               <div style={{ whiteSpace: "pre-line" }}> {formattedAnswer}</div>
             </div>
-            <div className="Loading"> {isLoading ? "loading..." : ""}</div>
+            {/* <div className="Loading"> {isLoading ? "loading..." : ""}</div> */}
+            {isLoading ? (
+              <img src={loading} alt="loading" className="loading-position" />
+            ) : (
+              ""
+            )}
           </div>
           {/* 여기 */}
         </div>
-
         {/* chatbot_sender는 스타일 없는 그냥 div */}
         <div className="chatbot_sender">
           <InsertMessage onInsert={onInsert} />
