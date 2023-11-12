@@ -68,6 +68,39 @@ function DataPage() {
     },
   ];
 
+  const frequency_1 = [
+    {
+      id: "remainder",
+      value: 100 - 23.51,
+    },
+    {
+      id: "percentage",
+      value: 23.51,
+    },
+  ];
+
+  const frequency_2 = [
+    {
+      id: "remainder",
+      value: 100 - 82.31,
+    },
+    {
+      id: "percentage",
+      value: 82.31,
+    },
+  ];
+
+
+  const frequency_3 = [
+    {
+      id: "remainder",
+      value: 100 - 52.82,
+    },
+    {
+      id: "percentage",
+      value: 52.82,
+    },
+  ];
   //const age = ages;
   const age = [
     {
@@ -82,7 +115,68 @@ function DataPage() {
         id: 40,
         value: 8
     },
-]
+  ]
+
+  const age_1 = [
+    {
+        id: 20,
+        value: 18,
+    },
+    {
+        id: 30,
+        value: 9,
+    },
+    {
+        id: 40,
+        value: 8
+    },
+  ]
+
+  const age_2 = [
+    {
+        id: 20,
+        value: 92,
+    },
+    {
+        id: 30,
+        value: 60,
+    },
+    {
+        id: 40,
+        value: 32
+    },
+    {
+        id: 50,
+        value: 31
+    },
+    {
+        id: 60,
+        value: 31
+    }
+  ]
+
+  const age_3 = [
+    {
+        id: 30,
+        value: 13,
+    },
+    {
+        id: 40,
+        value: 22,
+    },
+    {
+        id: 50,
+        value: 82
+    },
+    {
+        id: 60,
+        value: 73
+    },
+    {
+        id: 70,
+        value: 8
+    }
+  ]
 
   let temp = 0;
   let maxAge = "";
@@ -116,6 +210,66 @@ function DataPage() {
               title="연령대"
               statData={`${maxAge}대`}
               chartData={age}
+            />}
+        </div>
+      </div>
+
+      <div className="healthData_body">
+      <h2 className = "healthData_symptom" style={{display: 'block'}}>소화불량 및 위부통증</h2>
+        <div className = "healthData_List" style={{display: 'flex'}}>
+            {<HealthData className="healthData_ListItem"
+              title="질병 위험도"
+              statData={`${5}단계`}
+            />}
+            {<HealthData className="healthData_ListItem"
+              title="빈도"
+              statData={`${23.51}%`}
+              chartData={frequency_1}
+            />}
+            {<HealthData className="healthData_ListItem"
+              title="연령대"
+              statData={`${20}대`}
+              chartData={age_1}
+            />}
+        </div>
+      </div>
+
+      <div className="healthData_body">
+      <h2 className = "healthData_symptom" style={{display: 'block'}}>두통 및 어지러움</h2>
+        <div className = "healthData_List" style={{display: 'flex'}}>
+            {<HealthData className="healthData_ListItem"
+              title="질병 위험도"
+              statData={`${2}단계`}
+            />}
+            {<HealthData className="healthData_ListItem"
+              title="빈도"
+              statData={`${22.31}%`}
+              chartData={frequency_2}
+            />}
+            {<HealthData className="healthData_ListItem"
+              title="연령대"
+              statData={`${20}대`}
+              chartData={age_2}
+            />}
+        </div>
+      </div>
+
+      <div className="healthData_body">
+      <h2 className = "healthData_symptom" style={{display: 'block'}}>월경 불규칙, 체중 감소</h2>
+        <div className = "healthData_List" style={{display: 'flex'}}>
+            {<HealthData className="healthData_ListItem"
+              title="질병 위험도"
+              statData={`${8}단계`}
+            />}
+            {<HealthData className="healthData_ListItem"
+              title="빈도"
+              statData={`${52.82}%`}
+              chartData={frequency_3}
+            />}
+            {<HealthData className="healthData_ListItem"
+              title="연령대"
+              statData={`${50}대`}
+              chartData={age_3}
             />}
         </div>
       </div>
