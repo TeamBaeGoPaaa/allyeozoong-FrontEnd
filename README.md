@@ -20,7 +20,7 @@ E타입 - 청년을 위한 SW 💪
 ## 1. 백엔드 Spring Boot , 프론트엔드 (React + Vite) 활용 
 ```
   백엔드는 Spring Boot Framework, 프론트엔드는 React와 Vite를 활용하여 서비스를 개발하였습니다.
-  로그인 기능의 보안을 강화하기 위해 Spring security 를 적용하였고, Esbuild, ESM, HMR 등을 활용하여 
+  로그인 기능의 보안을 강화하기 위해 Spring security 를 적용하였으며 , 프런트의 경우 Esbuild, ESM, HMR 등을 활용하여 
   서버에 구동되는 시간, 번들링 속도, 코드 갱신 속도 등 다양한 방면에서의 속도를 높여줄 수 있는 빌드툴인
   Vite를 적용하였습니다. Vite는 기존 Create React App의 속도를 높이고 메모리도 적게 잡아 먹는 장점이  
   있습니다.
@@ -34,7 +34,6 @@ E타입 - 청년을 위한 SW 💪
 
 ### 2-2. 프론트엔드 서버 vercel Build & Deployment
 ![vercel2](https://github.com/TeamBaeGoPaaa/allyeozoong-FrontEnd/assets/90898067/a0404f8d-a0ee-44ee-8e2f-47423ad77fd4)
-![vercel1](https://github.com/TeamBaeGoPaaa/allyeozoong-FrontEnd/assets/90898067/7aaf1585-a26d-4854-bf45-7b3ff4a10941)
 
 
 ```
