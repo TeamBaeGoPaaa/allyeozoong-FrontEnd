@@ -4,7 +4,7 @@ import AgePiechart from "../Piechart/AgePiechart";
 import RiskIcon from "../Piechart/RiskIcon";
 
 function HealthData(props) {
-  const { title, pre, statData, post, chartData } = props;
+  const { title, statData, chartData } = props;
 
   let chartComponent;
 
