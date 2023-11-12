@@ -1,8 +1,8 @@
-import { createElement } from "react";
+import { useState } from "react";
 import PrintSend from "./PrintSend.jsx";
 import PrintResponse from "./PrintResponse.jsx";
 
-function MessageList({ sends, reply }) {
+function MessageList({ sends, reply, isClicked }) {
   //console.log(sends);
   //const { sends } = props;
   //   console.log(sends);
@@ -22,12 +22,21 @@ function MessageList({ sends, reply }) {
     }
   }
 
+  const [isItClicked, setIsItClicked] = useState(false);
+
+  const clickedFunction = (clicked) => {
+    setIsItClicked(clicked);
+    isClicked(isItClicked);
+  };
+
   // 합쳐진 배열 렌더링
   const result = combinedArray.map((item, index) => {
     if (item.type === "send") {
       return <PrintSend send={item.data} key={index} />;
     } else if (item.type === "response") {
-      return <PrintResponse response={item.data} key={index} />;
+      return <PrintResponse response={item.data} key={index} 
+      isClicked = {clickedFunction} 
+      />;
     }
     return null;
   });

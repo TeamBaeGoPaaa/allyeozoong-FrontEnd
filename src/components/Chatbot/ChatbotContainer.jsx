@@ -18,7 +18,7 @@ const intro = JSON.parse(
   "risk": "" }`
 );
 
-const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
+const ChatbotContainer = ({ riskFunction, frequFunction, userFunction }) => {
   // const [ riskFunction, freqFunction, userFunction ] = props;
   const [data, setData] = useState(dummyData); //GPT 답장
   const [isLoading, setIsLoading] = useState(false); //로딩 상태
@@ -89,19 +89,14 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
   // });
 
   const submitText = () => {
-    //위험도 데이터전송
-    // props.propFunction(data?.risk);
-    // props.propFunction(data?.risk * 10);
-
     const symptom = data?.related_symptom;
     const risk = data?.risk;
-    //console.log("지피티 호출 완료");
     console.log(symptom, risk);
 
     //백엔드 데이터 받은 거 보고 넣기
     riskFunction(data?.risk);
-    frequFunction(data?.related_symptom);  //임시
-    userFunction(data?.risk);
+    // frequFunction(data?.related_symptom);  //임시
+    // userFunction(data?.risk);
 
     // try {
     //   console.log("백엔드호출중");
@@ -123,9 +118,17 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
     // }
   };
 
+  const [isClicked, setIsClicked] = useState(false);
+
+  const clickedFunction = (clicked) => {
+    setIsClicked(clicked);
+  };
+
+  if (isClicked == true) submitText();
+
   return (
     <>
-      <div className = "chatbot_container">
+      <div className = "chatbot_container" style = {{ overflowY: 'scroll', maxHeight: '960px' }}>
           {/* <button onClick={handleClickAPICall}>GPT API call</button> */}
           {/* <div>data : {JSON.stringify(data)}</div> */}
           {/* <div>알려종 : {data}</div> */}
@@ -145,8 +148,10 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
         {/* chatbot_sender는 스타일 없는 그냥 div */}
         <div className = "chatbot_sender">
             <InsertMessage onInsert = {onInsert} />
-            <MessageList sends = {sender} reply = {reply} />
-            {/* {data && (
+            <MessageList sends = {sender} reply = {reply} 
+            isClicked = {clickedFunction} 
+            />
+            {data && (
               <button
               id="showGraph"
               onClick={submitText}
@@ -154,7 +159,7 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
               >
                 그래프 보기
               </button>
-            )} */}
+            )}
         </div>
       </div>
    </>

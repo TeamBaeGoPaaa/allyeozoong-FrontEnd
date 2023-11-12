@@ -11,8 +11,15 @@ import profile from "../../img/profile.svg";
 //   "risk": "평소보다 심한 피로감이 있어요. 왜 그럴까요?" }`
 // )
 
-function PrintResponse({ response }) {
+function PrintResponse({ response, isClicked }) {
   const { id2, text2 } = response;
+
+  function finallyClicked(clicked) {
+      if(clicked === true) isClicked(true);
+      else isClicked(false);
+  }
+
+
   return (
     <>
       {/* <li id="chatbot_responseList_demo1">{text2}</li> */}
@@ -27,7 +34,7 @@ function PrintResponse({ response }) {
             {/* {data && ( */}
               <button
                     className="showGraph"
-                    // onClick={submitText}
+                    onClick={finallyClicked(true)}
                     // style={{ display: !isLoading ? "block" : "none" }}
                     >
                       그래프 보기

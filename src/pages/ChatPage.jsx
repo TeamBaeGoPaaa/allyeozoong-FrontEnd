@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./ChatPage.css";
 import Header from "../components/header/header.jsx";
-import Stat from "../components/Stat/Stat";
-import AgeStat from "../components/Stat/ageStat.jsx";
+import Stat from "../components/Stat/Stat.jsx"
 import ChatbotContainer from "../components/Chatbot/ChatbotContainer.jsx";
 // import SendMessage from "../components/TodoCreate/SendMessage.jsx";
 
@@ -49,11 +48,11 @@ function ChatPage() {
   const frequency = [
     {
       id: "remainder",
-      value: 20,
+      value: 100-freq,
     },
     {
       id: "percentage",
-      value: 80,
+      value: freq,
     },
   ];
 
@@ -91,7 +90,10 @@ function ChatPage() {
         <div className="chatbot">
           {/* <SendMessage /> */}
           {/* <ChatbotContainer /> */}
-          <ChatbotContainer propFunction={(riskFunction, freqFunction, userFunction)} />
+          <ChatbotContainer 
+          riskFunction={riskFunction} 
+          freqFunction={freqFunction}
+          userFunction={userFunction} />
           {/* <Chatbotgpt propFunction={highFunction} /> */}
         </div>
         
@@ -99,7 +101,7 @@ function ChatPage() {
           <Stat
             title="질병 위험도"
             pre="해당 증상의 잠재적 위험도는 약 "
-            statData={`${data}%`}
+            statData={`${data}단계`}
             post=" 입니다."
             chartData={danger}
           />
@@ -110,7 +112,7 @@ function ChatPage() {
             post=" 의 사용자가 해당 증상에 대해 질문했던 경험이 있습니다."
             chartData={frequency}
           />
-          <AgeStat
+          <Stat
             title="연령대"
             pre="해당 증상에 대한 질문은 "
             statData={`${maxAge}대`}
