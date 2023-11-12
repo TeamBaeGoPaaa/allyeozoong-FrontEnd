@@ -40,7 +40,8 @@ E타입 - 청년을 위한 SW 💪
   추가로 데이터 처리 및 다양한 예시를 학습 시킴에 따라 파인튜닝한 모델의 Training loss를 조금식 줄였습니다.
 ```
 
-<img src="https://velog.velcdn.com/images/yooonwodyd/post/8cf6f82f-0ec8-4979-8f82-a9b5d03160ff/image.png" width="400" height="400"/> --version 1.0 ![](https://velog.velcdn.com/images/yooonwodyd/post/0f95e1d1-863c-49dc-8cd9-9d5bd99e9ba0/image.png)
+<img src="https://velog.velcdn.com/images/yooonwodyd/post/8cf6f82f-0ec8-4979-8f82-a9b5d03160ff/image.png"> 
+### --version 1.0 ![](https://velog.velcdn.com/images/yooonwodyd/post/0f95e1d1-863c-49dc-8cd9-9d5bd99e9ba0/image.png)
 ### --version 2.0 ![](https://velog.velcdn.com/images/yooonwodyd/post/3a8003ca-dbc2-4b3b-b4ab-b33bedef8628/image.png)
 ### --version 3.0 ![](https://velog.velcdn.com/images/yooonwodyd/post/fe6dc4ab-6bf4-48f5-8a0c-81377ac423fe/image.png)
 
