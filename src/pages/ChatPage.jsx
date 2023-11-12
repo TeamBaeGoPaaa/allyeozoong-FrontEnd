@@ -20,20 +20,29 @@ function ChatPage() {
   }, []);
 
   const [data, setData] = useState(0);
+  const [name, setName] = useState("");
   const [freq, setFreq] = useState(0);
-  const [user, setUser] = useState([]);
+  const [ages, setAges] = useState([]);
 
   const riskFunction = (dangerData) => {
     setData(dangerData);
+    console.log(data);
+  };
+
+  const nameFunction = (nameData) => {
+    setName(nameData);
+    console.log(name);
   };
 
   const freqFunction = (freqData) => {
     setFreq(freqData);
+    console.log(freq);
   };
 
-  const userFunction = (userData) => {
-    setUser(userData);
-  };  
+  const agesFunction = (agesData) => {
+    setAges(agesData);
+    console.log(ages);
+  };
 
   const danger = [
     {
@@ -91,10 +100,15 @@ function ChatPage() {
         <div className="chatbot">
           {/* <SendMessage /> */}
           {/* <ChatbotContainer /> */}
-          <ChatbotContainer propFunction={(riskFunction, freqFunction, userFunction)} />
+          <ChatbotContainer
+            riskFunction={riskFunction}
+            nameFunction={nameFunction}
+            freqFunction={freqFunction}
+            agesFunction={agesFunction}
+          />
           {/* <Chatbotgpt propFunction={highFunction} /> */}
         </div>
-        
+
         <div className="Card">
           <Stat
             title="질병 위험도"

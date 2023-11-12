@@ -2,7 +2,7 @@ import { createElement } from "react";
 import PrintSend from "./PrintSend.jsx";
 import PrintResponse from "./PrintResponse.jsx";
 
-function MessageList({ sends, reply }) {
+function MessageList({ sends, reply, submitText }) {
   //console.log(sends);
   //const { sends } = props;
   //   console.log(sends);
@@ -27,7 +27,13 @@ function MessageList({ sends, reply }) {
     if (item.type === "send") {
       return <PrintSend send={item.data} key={index} />;
     } else if (item.type === "response") {
-      return <PrintResponse response={item.data} key={index} />;
+      return (
+        <PrintResponse
+          response={item.data}
+          key={index}
+          submitText={submitText}
+        />
+      );
     }
     return null;
   });

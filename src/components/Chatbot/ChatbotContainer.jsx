@@ -18,7 +18,12 @@ const intro = JSON.parse(
   "risk": "" }`
 );
 
-const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
+const ChatbotContainer = ({
+  riskFunction,
+  nameFunction,
+  freqFunction,
+  agesFunction,
+}) => {
   // const [ riskFunction, freqFunction, userFunction ] = props;
   const [data, setData] = useState(dummyData); //GPT 답장
   const [isLoading, setIsLoading] = useState(false); //로딩 상태
@@ -88,11 +93,7 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
   //   });
   // });
 
-  const submitText = () => {
-    //위험도 데이터전송
-    // props.propFunction(data?.risk);
-    // props.propFunction(data?.risk * 10);
-
+  const submitText = async () => {
     const symptom = data?.related_symptom;
     const risk = data?.risk;
     //console.log("지피티 호출 완료");
@@ -100,20 +101,18 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
 
     //백엔드 데이터 받은 거 보고 넣기
     riskFunction(data?.risk);
-    frequFunction(data?.related_symptom); //임시
-    userFunction(data?.risk);
+    // nameFunction(data?.name);
+    // frequFunction(data?.related_symptom); //임시
+    // agesFunction(data?.ages);
 
     try {
       console.log("백엔드호출중");
-      // const response = await axios.post(
-      //   `https://allyeozoong.o-r.kr:8080/api/getFrequencyAndAges?symptom=${symptom}&age=10&lisk=${risk}`,
-      //   {
-      //     id: "user",
-      //   }
-      // ); // 여러분이 사용하고자 하는 API 엔드포인트로 대체하세요.
+      const response = await axios.post(
+        `https://allyeozoong.o-r.kr:8080/api/getFrequencyAndAges?symptom=${symptom}&age=10&lisk=${risk}`
+      ); // 여러분이 사용하고자 하는 API 엔드포인트로 대체하세요.
       console.log("백엔드호출완");
+      console.log(response);
       // const responseData = await response.json();
-      // console.log(response);
 
       // const backend_response_Frequency = response.data.Frequency;
       // const backend_response_ages = response.data.ages; //얘는 배열
@@ -145,7 +144,7 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
         {/* chatbot_sender는 스타일 없는 그냥 div */}
         <div className="chatbot_sender">
           <InsertMessage onInsert={onInsert} />
-          <MessageList sends={sender} reply={reply} />
+          <MessageList sends={sender} reply={reply} submitText={submitText} />
           {/* {data && (
               <button
               id="showGraph"

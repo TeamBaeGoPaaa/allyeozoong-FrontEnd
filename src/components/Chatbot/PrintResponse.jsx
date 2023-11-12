@@ -11,28 +11,34 @@ import profile from "../../img/profile.svg";
 //   "risk": "평소보다 심한 피로감이 있어요. 왜 그럴까요?" }`
 // )
 
-function PrintResponse({ response }) {
+function PrintResponse({ response, submitText }) {
   const { id2, text2 } = response;
   return (
     <>
       {/* <li id="chatbot_responseList_demo1">{text2}</li> */}
 
-      <div className="chatbot_response">  
+      <div className="chatbot_response">
         <img src={profile} alt="profile" />
         <div className="response_message">
           <span className="GPT_name">알려종</span>
           {/* <div className="response_content_demo2"> */}
-            <li className="chatbot_responseList" style={{ whiteSpace: "pre-line" }}> {text2}</li>
+          <li
+            className="chatbot_responseList"
+            style={{ whiteSpace: "pre-line" }}
+          >
+            {" "}
+            {text2}
+          </li>
           {/* </div> */}
-            {/* {data && ( */}
-              <button
-                    className="showGraph"
-                    // onClick={submitText}
-                    // style={{ display: !isLoading ? "block" : "none" }}
-                    >
-                      그래프 보기
-              </button>
-            {/* )} */}
+          {/* {data && ( */}
+          <button
+            className="showGraph"
+            onClick={submitText}
+            // style={{ display: !isLoading ? "block" : "none" }}
+          >
+            그래프 보기
+          </button>
+          {/* )} */}
         </div>
       </div>
     </>
