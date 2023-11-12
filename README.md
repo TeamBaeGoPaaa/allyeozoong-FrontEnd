@@ -10,7 +10,7 @@ E타입 - 청년을 위한 SW 💪
 
 남에게 말하기 힘든 성 및 건강 관련 고민을 털어 놓고, 관련 통계 정보를 통해 나만의 고민이 아님을 알려주는 인공지능 챗봇 헬스 케어 서비스 🤖
 
-![](https://velog.velcdn.com/images/yooonwodyd/post/3e1d300e-3e0f-461e-b8b2-781628c36fb6/image.gif)
+![](https://velog.velcdn.com/images/yooonwodyd/post/65f2d0b1-b1e1-4f42-aead-cd5d6f93b4b1/image.gif)
 
 <img width="630" alt="image" src="https://github.com/TeamBaeGoPaaa/allyeozoong-FrontEnd/assets/108808701/7c3335d0-bbd1-4866-92ae-98b6a995972e">
 
