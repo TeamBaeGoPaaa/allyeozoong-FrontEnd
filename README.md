@@ -20,8 +20,8 @@ E타입 - 청년을 위한 SW 💪
 ## 프로젝트에 활용된 기술
 
 ## 1. 백엔드 Spring Boot , 프론트엔드 (React + Vite) 활용 
-```
 [백엔드 레포지토리 이동](https://github.com/TeamBaeGoPaaa/allyeozoong-BackEnd)
+```
   백엔드는 Spring Boot Framework, 프론트엔드는 React와 Vite를 활용하여 서비스를 개발하였습니다. 유저와 환자의 일대다 매핑을 통해 값을 가져옵니다..
   로그인 기능의 보안을 강화하기 위해 Spring security 를 적용하였으며 , 프런트의 경우 Esbuild, ESM, HMR 등을 활용하여 
   서버에 구동되는 시간, 번들링 속도, 코드 갱신 속도 등 다양한 방면에서 속도와 메모리 효율을 높일 수 있는 빌드툴인
