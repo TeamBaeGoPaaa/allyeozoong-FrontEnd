@@ -65,7 +65,7 @@
 }
 
 #showGraph {
-  width: 380px;
+  width: 280px;
   height: 35px;
   margin-top: 7px;
 
@@ -74,6 +74,7 @@
   font-size: 14px;
   border: 0;
   border-radius: 40px;
+  margin-left: 60px;
 }
 
 #chatbot_sendmessage {
@@ -123,6 +124,7 @@
   margin-left: 5px;
 }
 
+/* 내가 보낸 채팅 스타일 */
 #chatbot_sendList {
   list-style-type: none;
 
@@ -138,13 +140,64 @@
   width: 300px;
 }
 
-#chatbot_responseList {
+#chatbot_responseList_demo1 {
   width: 400px;
   height: auto;
   background-color: var(--light-grey-color);
   padding: 18px 20px;
   border-radius: 15px;
   margin-top: 5px;
+
+  list-style-type: none;
+  float: left;
+  margin: 17px 0px;
+}
+
+.chatbot_response_demo2 {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+
+  width: 400px;
+  /* height: auto; */
+  /* background-color: var(--light-grey-color); */
+  /* padding: 18px 20px; */
+  /* border-radius: 15px; */
+  /* margin-top: 5px; */
+
+  /* list-style-type: none; */
+  /* float: left; */
+  /* margin: 17px 0px; */
+}
+
+.chatbot_response_demo2 img {
+  margin-top: 5px;
+}
+
+.response_message_demo2 {
+  width: 650px;
+  margin-left: 20px;
+}
+
+.response_content_demo2 {
+  width: 400px;
+  height: auto;
+  background-color: var(--light-grey-color);
+  padding: 18px 20px;
+  border-radius: 15px;
+  margin-top: 5px;
+  list-style-type: none;
+
+  /* width: 400px;
+  height: auto;
+  background-color: var(--light-grey-color);
+  padding: 18px 20px;
+  border-radius: 15px;
+  margin-top: 5px;
+
+  list-style-type: none;
+  float: left;
+  margin: 17px 0px; */
 }
 
 /* .stat_container {

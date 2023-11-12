@@ -29,7 +29,7 @@ export const CallGPT = async ({ prompt }) => {
       Answer: Chest pain can be caused by abnormalities of the heart and lungs, as well as abnormalities of the skin, muscle, cartilage, and bone in the chest area, abnormalities of large blood vessels, inflammation of the esophagus or stomach, and abnormalities of the gallbladder.
       Chest pain can also be caused by a myocardial infarction, in which case it lasts for more than 30 minutes and is characterized by a feeling of being squeezed or crushed by a machine, pain like being stabbed in the chest with a hot chopstick, sometimes nausea and vomiting, dizziness, severe shortness of breath, unconsciousness, shock, and heart attack, so you should take special care and visit the nearest hospital emergency room immediately if this happens.
       
-      [related_symptom] : Relevant symptoms should be one word, no "," e.g. "depression"
+      [related_symptom] : Provide a simple, one-word description of the relevant symptom, e.g. "depression"
       [risk]: 9
       
       Answer me this way.`,
