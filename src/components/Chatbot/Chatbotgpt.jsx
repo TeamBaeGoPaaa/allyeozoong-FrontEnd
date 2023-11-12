@@ -3,7 +3,6 @@ import { useState } from "react";
 import React, { useEffect } from "react";
 import { CallGPT } from "../../api/gpt.js";
 import profile from "../../img/profile.svg";
-import axios from "axios";
 
 // 새로고칠 때마다 GPT로 호출하면 돈이드니 더미데이터 활용해서 호출한 데이터 저장
 // const dummyData = JSON.parse(
@@ -24,6 +23,8 @@ function Chatbotgpt(props) {
   const [chatHistory, setChatHistory] = useState([]);
 
   const formattedAnswer = data.answer.replace(/\\n/g, "<br />");
+
+  const [highFunction, lowFuntion ] = props;
 
   const handleClickAPICall = async () => {
     try {
@@ -61,31 +62,8 @@ function Chatbotgpt(props) {
     setChatHistory([]);
   }, []);
 
-  const submitText = async () => {
-    props.propFunction(data?.risk * 10);
-
-    const symptom = data?.related_symptom;
-    const risk = data?.risk;
-    // console.log("지피티 호출 완료");
-    console.log(symptom, risk);
-    try {
-      console.log("백엔드호출중");
-      const response = await axios.post(
-        `https://allyeozoong.o-r.kr:8080/api/getFrequencyAndAges?symptom=${symptom}&age=10&lisk=${risk}`,
-        {
-          id: "user",
-        }
-      ); // 여러분이 사용하고자 하는 API 엔드포인트로 대체하세요.
-      console.log("백엔드호출완");
-      // const responseData = await response.json();
-      console.log(response);
-
-      const backend_response_Frequency = response.data.Frequency;
-      const backend_response_ages = response.data.ages; //얘는 배열
-      const backend_response_name = response.data.name;
-    } catch (error) {
-      console.log(error);
-    }
+  const submitText = () => {
+    props.propFunction(data?.risk);
   };
 
   return (
@@ -100,8 +78,8 @@ function Chatbotgpt(props) {
             <span id="allyeozoong">알려종</span>
             <div className="response_content">
               <div style={{ whiteSpace: "pre-line" }}> {formattedAnswer}</div>
-              {/* <div> {data?.related_symptom} </div> */}
-              {/* <div> {data?.risk} </div> */}
+              <div> {data?.related_symptom} </div>
+              <div> {data?.risk} </div>
             </div>
 
             {data && (

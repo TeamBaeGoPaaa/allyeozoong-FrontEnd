@@ -20,7 +20,6 @@ function ChatPage() {
   }, []);
 
   const [data, setData] = useState(0);
-
   const [freq, setFreq] = useState(0);
   const [user, setUser] = useState([]);
 
@@ -108,7 +107,7 @@ function ChatPage() {
           <Stat
             title="빈도"
             pre="약 "
-            statData={`${frequency[0].value}%`}
+            statData={`${freq}%`}
             post=" 의 사용자가 해당 증상에 대해 질문했던 경험이 있습니다."
             chartData={frequency}
           />
