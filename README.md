@@ -16,7 +16,7 @@ Currently, two official plugins are available:
 GPT-3.5 파인 튜닝
 
 ### 버전 1.0 ![](https://velog.velcdn.com/images/yooonwodyd/post/0f95e1d1-863c-49dc-8cd9-9d5bd99e9ba0/image.png) 
-### 버전 2.0 ![](https://velog.velcdn.com/images/yooonwodyd/post/a5a4fbcf-296d-4969-87b9-b9ee264b717f/image.png)
+### 버전 2.0 ![](https://velog.velcdn.com/images/yooonwodyd/post/3a8003ca-dbc2-4b3b-b4ab-b33bedef8628/image.png)
 ### 버전 3.0 ![](https://velog.velcdn.com/images/yooonwodyd/post/fe6dc4ab-6bf4-48f5-8a0c-81377ac423fe/image.png)
 
 # 프로젝트에 활용 된 기술
