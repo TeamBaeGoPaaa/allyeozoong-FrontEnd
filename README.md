@@ -32,6 +32,7 @@ E타입 - 청년을 위한 SW 💪
 ## 2. 서버 배포
 ### 2-1. 백엔드 서버 SSL 인증서 적용
 
+centOS 서버 대여한 뒤 배포 후 도메인과 SSL 인증서를 발급받았습니다.
 ![image](https://github.com/TeamBaeGoPaaa/allyeozoong-FrontEnd/assets/108808701/67a6b67d-b8d1-4c88-a146-2a08c3afa09b)
 
 ### 2-2. 프론트엔드 서버 vercel Build & Deployment
@@ -42,8 +43,7 @@ E타입 - 청년을 위한 SW 💪
 
 ```
   프론트엔드는 vercel , 백엔드는 centOS 서버를 대여받아 각각 배포하여 통신하는 구조로 웹 사이트를 구성하였습니다.
-  이 때 https로 배포된 프론트 서버에서 http 프로토콜을 사용하는 백엔드 서버의 API 를 호출하면 Mixed Content 에러가 발생하기에
-  이를 해결하기 위해 Let's Encrpty 기관으로부터 SSL 인증서를 발급받아 적용하였습니다.
+  이 때 https로 배포된 프론트 서버의 보단 안전한 통신을 위해 Let's Encrpty 기관으로부터 SSL 인증서를 발급받아 적용하였습니다.
 ```
 ## 3. GPT-3.5 turbo API  Fine-Tuning
 *증상의 정도 측정* *해결방안+상담진행*
