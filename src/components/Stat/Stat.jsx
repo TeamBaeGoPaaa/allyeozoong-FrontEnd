@@ -11,7 +11,7 @@ function Stat(props) {
   console.log(typeof(statData));
 
   if (title == "질병 위험도") {
-    chartComponent = <RiskIcon className="pieChart" data={statData} />;
+    chartComponent = <RiskIcon className="pieChart" level={statData} />;
   } else if (title === "빈도") {
     chartComponent = <Piechart className="pieChart" data={chartData} />;
   } else if (title === "연령대") {

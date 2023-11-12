@@ -3,12 +3,10 @@ import Piechart from "../Piechart/Piechart";
 import AgePiechart from "../Piechart/AgePiechart";
 import RiskIcon from "../Piechart/RiskIcon";
 
-function healthData(props) {
+function HealthData(props) {
   const { title, pre, statData, post, chartData } = props;
 
   let chartComponent;
-
-  console.log(typeof(statData));
 
   if (title == "질병 위험도") {
     chartComponent = <RiskIcon className="pieChart" data={statData} />;
@@ -23,24 +21,14 @@ function healthData(props) {
 
   return (
     <>
-      <div className="healthData_container">
-        <div className="healthData_title">{title}</div>
-        <div className="healthData_content">
-          <div className="healthData_graph">
-            {chartComponent}
-            {/* <Piechart className="pieChart" data={chartData} /> */}
-          </div>
-          <div className="healthData_description">
-            <span className="healthData_text">{pre}</span>
-            <span id="healthData_data" className="stat_text">
-              {statData}단계
-            </span>
-            <span className="healthData_text">{post}</span>
-          </div>
+        <div className="healthData_container">
+            <div className="healthData_title">{title}</div>
+                <div className="healthData_graph">
+                    {chartComponent}
+                </div>
         </div>
-      </div>
     </>
   );
 }
 
-export default healthData;
+export default HealthData;

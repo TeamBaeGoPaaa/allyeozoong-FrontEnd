@@ -26,7 +26,7 @@ function Header(props) {
     <>
       <div id="header">
         <Link to="/" state={{ user: user }}>
-          <img id="logo" src={logo} alt="allyeozoong logo" />
+          <img id="header_logo" src={logo} alt="allyeozoong logo" />
         </Link>
 
         <NavLink
@@ -89,7 +89,7 @@ function Header(props) {
           {loginState ? (
             <>
               <img id="logo" src={Profile} alt="profile logo" />
-              <p className="profile"><strong>관리자</strong> 님</p>
+              <p className="profile"><strong>김공주</strong> 님</p>
             </>
           ) : (
             <>

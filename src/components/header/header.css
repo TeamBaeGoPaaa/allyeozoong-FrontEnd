@@ -33,10 +33,11 @@
   margin-top: 10px;
   display: flex;
   align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
-#logo {
-  margin-left: 10%;
+#header_logo {
   display: inline;
 }
 

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./DataPage.css";
 import Header from "../components/header/header.jsx";
-import healthData from "../components/healthData/healthData.jsx";
+import HealthData from "../components/HealthData/HealthData.jsx"
 //import Stat from "../components/Stat/Stat.jsx";
 //import ChatbotContainer from "../components/Chatbot/ChatbotContainer.jsx";
 // import SendMessage from "../components/TodoCreate/SendMessage.jsx";
@@ -84,32 +84,23 @@ function DataPage() {
       </div>
 
       <div className="body">
-    
-        {name && (
-          <div className="Card">
-            <healthData
+        <div className = "healthData_List"style={{display: 'flex'}}>
+            {<HealthData className="healthData_ListItem"
               title="질병 위험도"
-              pre="해당 증상의 잠재적 위험도는 약 "
               statData={data}
-              post=" 입니다."
               chartData={danger}
-            />
-            <healthData
+            />}
+            {<HealthData className="healthData_ListItem"
               title="빈도"
-              pre="약 "
               statData={`${freq}%`}
-              post=" 의 사용자가 해당 증상에 대해 질문했던 경험이 있습니다."
               chartData={frequency}
-            />
-            <healthData
+            />}
+            {<HealthData className="healthData_ListItem"
               title="연령대"
-              pre="해당 증상에 대한 질문은 "
               statData={`${maxAge}대`}
-              post=" 에서 가장 많았습니다."
               chartData={age}
-            />
-          </div>
-        )}
+            />}
+        </div>
       </div>
     </>
   );

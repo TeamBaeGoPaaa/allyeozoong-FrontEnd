@@ -37,3 +37,11 @@
   justify-content: space-between;
   margin-left: 50px;
 }
+
+.healthData_List {
+  width: auto;
+}
+
+.healthData_ListItem {
+  margin: auto;
+}

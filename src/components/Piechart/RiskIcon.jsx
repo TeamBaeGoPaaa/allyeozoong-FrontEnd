@@ -10,9 +10,11 @@ function RiskIcon(level) {
 
     let riskLevel;
     let faceIcon;
+
+    let thisLevel = parseInt(level.level);
   
 
-  if (level.data > 0 && level.data < 5) {
+  if (level.level > 0 && level.level < 5) {
     //1,2,3,4
     riskLevel = 1;
     faceIcon = (
@@ -22,7 +24,7 @@ function RiskIcon(level) {
         size="9x"
       />
     );
-  } else if (level.data >= 5 && level.data < 8) {
+  } else if (level.level >= 5 && level.level < 8) {
     //5,6,7
     riskLevel = 2;
     faceIcon = (
