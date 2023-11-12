@@ -27,8 +27,13 @@ function ChatPage() {
     setData(dangerData);
   };
 
-  
-  
+  const freqFunction = (freqData) => {
+    setFreq(freqData);
+  };
+
+  const userFunction = (userData) => {
+    setUser(userData);
+  };  
 
   const danger = [
     {
@@ -85,10 +90,11 @@ function ChatPage() {
       <div className="body">
         <div className="chatbot">
           {/* <SendMessage /> */}
-          <ChatbotContainer />
-          {/* <ChatbotContainer propFunction={highFunction} /> */}
+          {/* <ChatbotContainer /> */}
+          <ChatbotContainer propFunction={(riskFunction, freqFunction, userFunction)} />
           {/* <Chatbotgpt propFunction={highFunction} /> */}
         </div>
+        
         <div className="Card">
           <Stat
             title="질병 위험도"

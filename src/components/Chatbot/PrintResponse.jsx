@@ -1,7 +1,7 @@
 import "./Chatbot.css";
-import { useState } from "react";
+// import { useState } from "react";
 import React, { useEffect } from "react";
-import { CallGPT } from "../../api/gpt.js";
+// import { CallGPT } from "../../api/gpt.js";
 import profile from "../../img/profile.svg";
 
 // 새로고칠 때마다 GPT로 호출하면 돈이드니 더미데이터 활용해서 호출한 데이터 저장
