@@ -9,16 +9,18 @@ function RiskIcon(level) {
 
     let riskLevel;
     let faceIcon;
+    console.log(level.level);
+    level = parseInt(level);
 
     if(level > 0 && level <5) {   //1,2,3,4
         riskLevel = 1;
-        faceIcon = <FontAwesomeIcon icon={faFaceSmile} style={{color: "#4ead00", }} />
+        faceIcon = <FontAwesomeIcon icon={faFaceSmile} style={{color: "#4ead00", }} size = "9x" />
     } else if (level >= 5 && level <8) {   //5,6,7
         riskLevel = 2;
         faceIcon = <FontAwesomeIcon icon={faFaceSurprise} style={{color: "#ffbb00",}} size = "9x" />
     } else {   // 8,9,10
         riskLevel = 3;
-        faceIcon = <FontAwesomeIcon icon={faFaceSadTear} style={{color: "#d60000",}} size = "10x" />
+        faceIcon = <FontAwesomeIcon icon={faFaceSadTear} style={{color: "#d60000",}} size = "9x" />
     }
 
   return (

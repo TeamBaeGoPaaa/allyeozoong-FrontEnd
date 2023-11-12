@@ -20,9 +20,8 @@ export const CallGPT = async ({ prompt }) => {
       // ex) 너는 이제부터 성/건강 의료진이야!
       // 여기 system은 이미지를 출력하라고 전제 넣는거
       role: "system",
-      content: ` From now on, you are a doctor.
-      I'm going to ask you a series of questions, and in 7 lines or less, describe the symptoms you can infer from those questions,
-      At the end, give me a category for that question and a percentage risk.
+      content: ` You're a symptom and risk assessor. You'll answer the user's question, 
+      and at the end of your answer, you'll give them a one-word symptom and a risk rating of 1-10.
       
       Sample questions include
       Example question: "I have chest pain, what could be wrong?"
