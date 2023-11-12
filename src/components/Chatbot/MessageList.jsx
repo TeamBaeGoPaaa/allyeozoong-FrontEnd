@@ -1,4 +1,4 @@
-import { createElement } from "react";
+import { useState } from "react";
 import PrintSend from "./PrintSend.jsx";
 import PrintResponse from "./PrintResponse.jsx";
 
@@ -21,6 +21,13 @@ function MessageList({ sends, reply, submitText }) {
       combinedArray.push({ type: "response", data: reply[i] });
     }
   }
+
+  const [isItClicked, setIsItClicked] = useState(false);
+
+  const clickedFunction = (clicked) => {
+    setIsItClicked(clicked);
+    isClicked(isItClicked);
+  };
 
   // 합쳐진 배열 렌더링
   const result = combinedArray.map((item, index) => {

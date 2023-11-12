@@ -19,7 +19,7 @@ export default function MainPage() {
       setUserLogin(location.state.user);
     }
   }, []);
-  // console.log(useLogin);
+   console.log(useLogin);
 
   return (
     <>

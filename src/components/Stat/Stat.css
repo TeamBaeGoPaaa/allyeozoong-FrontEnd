@@ -34,23 +34,23 @@
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.title {
+.stat_title {
   margin-left: 20px;
   margin-top: 10px;
   font-size: 25px;
   font-weight: bold;
 }
 
-.content {
+.stat_content {
   display: flex;
 }
 
-.graph {
+.stat_graph {
   width: 350px;
   height: 300px;
 }
 
-.description {
+.stat_description {
   width: 250px;
   margin-top: 90px;
   font-size: 16px;

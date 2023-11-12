@@ -30,7 +30,7 @@ export const CallGPT = async ({ prompt }) => {
       Chest pain can also be caused by a myocardial infarction, in which case it lasts for more than 30 minutes and is characterized by a feeling of being squeezed or crushed by a machine, pain like being stabbed in the chest with a hot chopstick, sometimes nausea and vomiting, dizziness, severe shortness of breath, unconsciousness, shock, and heart attack, so you should take special care and visit the nearest hospital emergency room immediately if this happens.
       
       [related_symptom] : Provide a simple, one-word description of the relevant symptom, e.g. "depression"
-      [risk]: 9
+      [risk]: 90
       
       Answer me this way.`,
     },

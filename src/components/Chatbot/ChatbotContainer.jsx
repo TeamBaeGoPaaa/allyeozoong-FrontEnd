@@ -124,6 +124,14 @@ const ChatbotContainer = ({
     }
   };
 
+  const [isClicked, setIsClicked] = useState(false);
+
+  const clickedFunction = (clicked) => {
+    setIsClicked(clicked);
+  };
+
+  if (isClicked == true) submitText();
+
   return (
     <>
       <div className="chatbot_container">
@@ -152,14 +160,14 @@ const ChatbotContainer = ({
           <InsertMessage onInsert={onInsert} />
           <MessageList sends={sender} reply={reply} submitText={submitText} />
           {/* {data && (
-              <button
+            <button
               id="showGraph"
               onClick={submitText}
               style={{ display: !isLoading ? "block" : "none" }}
-              >
-                그래프 보기
-              </button>
-            )} */}
+            >
+              그래프 보기
+            </button>
+          )} */}
         </div>
       </div>
     </>

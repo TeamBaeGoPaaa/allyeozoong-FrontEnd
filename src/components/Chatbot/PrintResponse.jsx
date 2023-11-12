@@ -13,6 +13,13 @@ import profile from "../../img/profile.svg";
 
 function PrintResponse({ response, submitText }) {
   const { id2, text2 } = response;
+
+  function finallyClicked(clicked) {
+      if(clicked === true) isClicked(true);
+      else isClicked(false);
+  }
+
+
   return (
     <>
       {/* <li id="chatbot_responseList_demo1">{text2}</li> */}
