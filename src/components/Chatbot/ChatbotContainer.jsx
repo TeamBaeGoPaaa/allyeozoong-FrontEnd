@@ -96,13 +96,16 @@ const ChatbotContainer = ({
   const submitText = async () => {
     const symptom = data?.related_symptom;
     const risk = data?.risk;
-    //console.log("지피티 호출 완료");
-    console.log(symptom, risk);
+    const age = [10, 20, 30, 40, 50, 60];
+    const age_index = Math.floor(Math.random() * age.length);
+    const user_age = age[age_index];
+
+    console.log(symptom, risk, user_age);
 
     try {
       console.log("백엔드호출중");
       const response = await axios.post(
-        `https://allyeozoong.o-r.kr:8080/api/getFrequencyAndAges?symptom=${symptom}&age=10&lisk=${risk}`
+        `https://allyeozoong.o-r.kr:8080/api/getFrequencyAndAges?symptom=${symptom}&age=${user_age}&lisk=${risk}`
       ); // 여러분이 사용하고자 하는 API 엔드포인트로 대체하세요.
       console.log("백엔드호출완");
       // console.log(response);
