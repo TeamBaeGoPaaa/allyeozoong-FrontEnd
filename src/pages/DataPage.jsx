@@ -24,7 +24,6 @@ function DataPage() {
   const [freq, setFreq] = useState(0);
   const [ages, setAges] = useState([]);
 
-  const symptom = "소화불량 및 가려움증";
 
   const riskFunction = (dangerData) => {
     setData(dangerData);
@@ -60,11 +59,11 @@ function DataPage() {
   const frequency = [
     {
       id: "remainder",
-      value: 100 - 56.87,
+      value: 100 - 72.45,
     },
     {
       id: "percentage",
-      value: 56.87,
+      value: 72.45,
     },
   ];
 
@@ -104,15 +103,15 @@ function DataPage() {
   //const age = ages;
   const age = [
     {
+        id: 10,
+        value: 52,
+    },
+    {
         id: 20,
-        value: 4,
+        value: 78,
     },
     {
         id: 30,
-        value: 2,
-    },
-    {
-        id: 40,
         value: 8
     },
   ]
@@ -128,7 +127,7 @@ function DataPage() {
     },
     {
         id: 40,
-        value: 8
+        value: 48
     },
   ]
 
@@ -194,21 +193,20 @@ function DataPage() {
       </div>
 
       <div className="healthData_body">
-      <h2 className = "healthData_symptom" style={{display: 'block'}}>{symptom}</h2>
+      <h2 className = "healthData_symptom" style={{display: 'block'}}>대인관계 문제</h2>
         <div className = "healthData_List" style={{display: 'flex'}}>
             {<HealthData className="healthData_ListItem"
               title="질병 위험도"
-              statData={`${data}단계`}
-              chartData={danger}
+              statData={`${1}단계`}
             />}
             {<HealthData className="healthData_ListItem"
               title="빈도"
-              statData={`${freq}%`}
+              statData={`${72.45}%`}
               chartData={frequency}
             />}
             {<HealthData className="healthData_ListItem"
               title="연령대"
-              statData={`${maxAge}대`}
+              statData={`${20}대`}
               chartData={age}
             />}
         </div>
@@ -228,18 +226,18 @@ function DataPage() {
             />}
             {<HealthData className="healthData_ListItem"
               title="연령대"
-              statData={`${20}대`}
+              statData={`${40}대`}
               chartData={age_1}
             />}
         </div>
       </div>
 
       <div className="healthData_body">
-      <h2 className = "healthData_symptom" style={{display: 'block'}}>두통 및 어지러움</h2>
+      <h2 className = "healthData_symptom" style={{display: 'block'}}>자아존중감</h2>
         <div className = "healthData_List" style={{display: 'flex'}}>
             {<HealthData className="healthData_ListItem"
               title="질병 위험도"
-              statData={`${2}단계`}
+              statData={`${5}단계`}
             />}
             {<HealthData className="healthData_ListItem"
               title="빈도"

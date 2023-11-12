@@ -28,7 +28,7 @@ function OnBoarding(props) {
     if (loginState) {
       navigate("/ChatPage", { state: { user: true } });
     } else {
-      alert("로그인을 해주세요!");
+      alert("로그인 후 이용가능합니다.");
     }
   };
 
