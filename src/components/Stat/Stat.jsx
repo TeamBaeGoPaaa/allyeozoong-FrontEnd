@@ -9,7 +9,7 @@ function Stat(props) {
   let chartComponent;
 
   if (title == "질병 위험도") {
-    chartComponent = <RiskIcon className="pieChart" data={statData} />;
+    chartComponent = <RiskIcon className="pieChart" level={statData} />;
   } else if (title === "빈도") {
     chartComponent = <Piechart className="pieChart" data={chartData} />;
   } else if (title === "연령대") {
@@ -31,7 +31,7 @@ function Stat(props) {
           <div className="stat_description">
             <span className="stat_text">{pre}</span>
             <span id="statData" className="stat_text">
-              {statData}단계
+              {statData}
             </span>
             <span className="stat_text">{post}</span>
           </div>

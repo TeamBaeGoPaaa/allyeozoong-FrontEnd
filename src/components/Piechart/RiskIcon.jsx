@@ -10,8 +10,10 @@ function RiskIcon(level) {
 
   let riskLevel;
   let faceIcon;
+  const regex = /[^0-9]/g;
+  const result = level.level.replace(regex, "");
 
-  if (level.data > 0 && level.data < 5) {
+  if (result > 0 && result < 5) {
     //1,2,3,4
     riskLevel = 1;
     faceIcon = (
@@ -21,7 +23,7 @@ function RiskIcon(level) {
         size="9x"
       />
     );
-  } else if (level.data >= 5 && level.data < 8) {
+  } else if (result >= 5 && result < 8) {
     //5,6,7
     riskLevel = 2;
     faceIcon = (
@@ -55,7 +57,7 @@ function RiskIcon(level) {
             riskLevel == 1 ? "#4ead00" : riskLevel == 2 ? "#ffbb00" : "#d60000",
         }}
       >
-        <strong>{level.data}단계</strong>
+        <strong>{result}단계</strong>
       </h2>
     </>
   );

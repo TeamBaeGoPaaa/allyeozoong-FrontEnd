@@ -100,7 +100,7 @@ function ChatPage() {
             <Stat
               title="질병 위험도"
               pre="해당 증상의 잠재적 위험도는 약 "
-              statData={data}
+              statData={`${data}단계`}
               post=" 입니다."
               chartData={danger}
             />
