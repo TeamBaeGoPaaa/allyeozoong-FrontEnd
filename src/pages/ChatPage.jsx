@@ -58,28 +58,15 @@ function ChatPage() {
   const frequency = [
     {
       id: "remainder",
-      value: 20,
+      value: 100 - freq,
     },
     {
       id: "percentage",
-      value: 80,
+      value: freq,
     },
   ];
 
-  const age = [
-    {
-      id: "20",
-      value: 3,
-    },
-    {
-      id: "40",
-      value: 8,
-    },
-    {
-      id: "30",
-      value: 2,
-    },
-  ];
+  const age = ages;
 
   let temp = 0;
   let maxAge = "";
