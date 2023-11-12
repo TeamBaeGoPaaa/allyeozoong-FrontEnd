@@ -44,5 +44,5 @@ Fine-turning 을 적용하였습니다. 크롤링을 통해 만든 jsonl 데이�
 ### --version 1.0 ![](https://velog.velcdn.com/images/yooonwodyd/post/0f95e1d1-863c-49dc-8cd9-9d5bd99e9ba0/image.png) 
 ### --version 2.0 ![](https://velog.velcdn.com/images/yooonwodyd/post/3a8003ca-dbc2-4b3b-b4ab-b33bedef8628/image.png)
 ### --version 3.0 ![](https://velog.velcdn.com/images/yooonwodyd/post/fe6dc4ab-6bf4-48f5-8a0c-81377ac423fe/image.png)
-
+--version 3.0에서 사용자와의 대화에서 보다 정밀한 위험도 측정이 가능해짐.
 ## 시연 영상
