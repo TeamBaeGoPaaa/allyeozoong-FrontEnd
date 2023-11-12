@@ -33,6 +33,8 @@ E타입 - 청년을 위한 SW 💪
 ![image](https://github.com/TeamBaeGoPaaa/allyeozoong-FrontEnd/assets/108808701/67a6b67d-b8d1-4c88-a146-2a08c3afa09b)
 
 ### 2-2. 프론트엔드 서버 vercel Build & Deployment
+![vercel](https://github.com/TeamBaeGoPaaa/allyeozoong-FrontEnd/assets/90898067/1a9871f3-fe52-4cdf-8765-135a6828bf42)
+
 ![vercel2](https://github.com/TeamBaeGoPaaa/allyeozoong-FrontEnd/assets/90898067/a0404f8d-a0ee-44ee-8e2f-47423ad77fd4)
 
 
