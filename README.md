@@ -33,6 +33,10 @@ E타입 - 청년을 위한 SW 💪
 ![image](https://github.com/TeamBaeGoPaaa/allyeozoong-FrontEnd/assets/108808701/67a6b67d-b8d1-4c88-a146-2a08c3afa09b)
 
 ### 2-2. 프론트엔드 서버 vercel Build & Deployment
+![vercel2](https://github.com/TeamBaeGoPaaa/allyeozoong-FrontEnd/assets/90898067/a0404f8d-a0ee-44ee-8e2f-47423ad77fd4)
+![vercel1](https://github.com/TeamBaeGoPaaa/allyeozoong-FrontEnd/assets/90898067/7aaf1585-a26d-4854-bf45-7b3ff4a10941)
+
+
 ```
   프론트엔드는 vercel , 백엔드는 centOS 서버를 대여받아 각각 배포하여 통신하는 구조로 웹 사이트를 구성하였습니다.
   이 때 https로 배포된 프론트 서버에서 http 프로토콜을 사용하는 백엔드 서버의 API 를 호출하면 Mixed Content 에러가 발생하기에
