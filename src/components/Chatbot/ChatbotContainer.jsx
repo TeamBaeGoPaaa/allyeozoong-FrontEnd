@@ -1,10 +1,10 @@
-import './Chatbot.css'
-import React, { useState,  useCallback, useRef, useEffect } from "react";   //useEffect, useRef
+import "./Chatbot.css";
+import React, { useState, useCallback, useRef, useEffect } from "react"; //useEffect, useRef
 import axios from "axios";
 import { CallGPT } from "../../api/gpt.js";
-import profile from '../../img/profile.svg';
-import InsertMessage from './InsertMessage.jsx';
-import MessageList from './MessageList.jsx';
+import profile from "../../img/profile.svg";
+import InsertMessage from "./InsertMessage.jsx";
+import MessageList from "./MessageList.jsx";
 
 const dummyData = JSON.parse(
   `{ "answer": "더미데이터", 
@@ -23,13 +23,13 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
   const [data, setData] = useState(dummyData); //GPT 답장
   const [isLoading, setIsLoading] = useState(false); //로딩 상태
   //const [userInput, setUserInput] = useState("");      //입력창
-  const [ sender , setSender ] = useState([]);         //표시할 보낸메시지를 객체로 받기
-  const [ reply, setReply ] = useState([]);            //표시할 받은메시지를 객체로 받기
+  const [sender, setSender] = useState([]); //표시할 보낸메시지를 객체로 받기
+  const [reply, setReply] = useState([]); //표시할 받은메시지를 객체로 받기
 
   const formattedAnswer = intro.answer.replace(/\\n/g, "<br />");
   // console.log(formattedAnswer);
-  
-   // GPT 메시지 받기 코드
+
+  // GPT 메시지 받기 코드
   const handleClickAPICall = async (userInput) => {
     try {
       setIsLoading(true); // message 가져오는 동안 로딩
@@ -38,7 +38,7 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
       const message = await CallGPT({
         prompt: `${userInput}`,
       }); // CallGPT에서 message를 리턴 받는다.
-      
+
       setData(JSON.parse(message));
 
       // data.answer.replace(/\\n\g, "<br />");
@@ -46,21 +46,21 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
       // console.log(JSON.parse(message).answer.replace(/\\n/g, "<br />"));
       const abcd = JSON.parse(message).answer.replace(/\\n/g, "<br />");
       onInsert2(abcd);
-    } catch(error) {
+    } catch (error) {
       console.error("API 호출 중 오류:", error);
     } finally {
-      setIsLoading(false);  //가져왔으니 로딩 false
+      setIsLoading(false); //가져왔으니 로딩 false
     }
   };
 
   //사용자 메시지 추가 코드
   const nextId = useRef(1);
-  const onInsert = useCallback( (text) => {
+  const onInsert = useCallback((text) => {
     const question = {
-        id: nextId.current,
-        text,
+      id: nextId.current,
+      text,
     };
-    setSender((sender)=>sender.concat(question));
+    setSender((sender) => sender.concat(question));
     nextId.current++;
     handleClickAPICall(question.text);
   }, []);
@@ -100,53 +100,53 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
 
     //백엔드 데이터 받은 거 보고 넣기
     riskFunction(data?.risk);
-    frequFunction(data?.related_symptom);  //임시
+    frequFunction(data?.related_symptom); //임시
     userFunction(data?.risk);
 
-    // try {
-    //   console.log("백엔드호출중");
-    //   const response = await axios.post(
-    //     `https://allyeozoong.o-r.kr:8080/api/getFrequencyAndAges?symptom=${symptom}&age=10&lisk=${risk}`,
-    //     {
-    //       id: "user",
-    //     }
-    //   ); // 여러분이 사용하고자 하는 API 엔드포인트로 대체하세요.
-    //   console.log("백엔드호출완");
-    //   // const responseData = await response.json();
-    //   console.log(response);
+    try {
+      console.log("백엔드호출중");
+      // const response = await axios.post(
+      //   `https://allyeozoong.o-r.kr:8080/api/getFrequencyAndAges?symptom=${symptom}&age=10&lisk=${risk}`,
+      //   {
+      //     id: "user",
+      //   }
+      // ); // 여러분이 사용하고자 하는 API 엔드포인트로 대체하세요.
+      console.log("백엔드호출완");
+      // const responseData = await response.json();
+      // console.log(response);
 
-    //   // const backend_response_Frequency = response.data.Frequency;
-    //   // const backend_response_ages = response.data.ages; //얘는 배열
-    //   // const backend_response_name = response.data.name;
-    // } catch (error) {
-    //   console.log(error);
-    // }
+      // const backend_response_Frequency = response.data.Frequency;
+      // const backend_response_ages = response.data.ages; //얘는 배열
+      // const backend_response_name = response.data.name;
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <>
-      <div className = "chatbot_container">
-          {/* <button onClick={handleClickAPICall}>GPT API call</button> */}
-          {/* <div>data : {JSON.stringify(data)}</div> */}
-          {/* <div>알려종 : {data}</div> */}
-        <div className = "chatbot_intro">
+      <div className="chatbot_container">
+        {/* <button onClick={handleClickAPICall}>GPT API call</button> */}
+        {/* <div>data : {JSON.stringify(data)}</div> */}
+        {/* <div>알려종 : {data}</div> */}
+        <div className="chatbot_intro">
           {/* 여기 */}
           <img src={profile} alt="profile" />
-          <div className = "intro_message">
-            <span className = "GPT_name">알려종</span>
-            <div className = "intro_content">
-              <div style={{ whiteSpace: 'pre-line' }}> {formattedAnswer}</div>
+          <div className="intro_message">
+            <span className="GPT_name">알려종</span>
+            <div className="intro_content">
+              <div style={{ whiteSpace: "pre-line" }}> {formattedAnswer}</div>
             </div>
-            <div className = "Loading"> {isLoading ? "loading..." : ""}</div>
+            <div className="Loading"> {isLoading ? "loading..." : ""}</div>
           </div>
           {/* 여기 */}
-        </div>       
+        </div>
 
         {/* chatbot_sender는 스타일 없는 그냥 div */}
-        <div className = "chatbot_sender">
-            <InsertMessage onInsert = {onInsert} />
-            <MessageList sends = {sender} reply = {reply} />
-            {/* {data && (
+        <div className="chatbot_sender">
+          <InsertMessage onInsert={onInsert} />
+          <MessageList sends={sender} reply={reply} />
+          {/* {data && (
               <button
               id="showGraph"
               onClick={submitText}
@@ -157,7 +157,7 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
             )} */}
         </div>
       </div>
-   </>
+    </>
   );
 };
 
