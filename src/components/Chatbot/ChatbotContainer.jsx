@@ -99,24 +99,21 @@ const ChatbotContainer = ({
     //console.log("지피티 호출 완료");
     console.log(symptom, risk);
 
-    //백엔드 데이터 받은 거 보고 넣기
-    riskFunction(data?.risk);
-    // nameFunction(data?.name);
-    // frequFunction(data?.related_symptom); //임시
-    // agesFunction(data?.ages);
-
     try {
       console.log("백엔드호출중");
       const response = await axios.post(
         `https://allyeozoong.o-r.kr:8080/api/getFrequencyAndAges?symptom=${symptom}&age=10&lisk=${risk}`
       ); // 여러분이 사용하고자 하는 API 엔드포인트로 대체하세요.
       console.log("백엔드호출완");
-      console.log(response);
-      // const responseData = await response.json();
+      // console.log(response);
+      // console.log(response.data?.name);
+      // console.log(response.data?.Frequency);
+      // console.log(response.data?.ages);
 
-      // const backend_response_Frequency = response.data.Frequency;
-      // const backend_response_ages = response.data.ages; //얘는 배열
-      // const backend_response_name = response.data.name;
+      riskFunction(data?.risk);
+      nameFunction(response.data?.name);
+      freqFunction(response.data?.Frequency);
+      agesFunction(response.data?.ages);
     } catch (error) {
       console.log(error);
     }

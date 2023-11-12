@@ -10,11 +10,11 @@ import ChatbotContainer from "../components/Chatbot/ChatbotContainer.jsx";
 function ChatPage() {
   const [useLogin, setUserLogin] = useState();
   const location = useLocation();
-  console.log(useLogin);
+  // console.log(useLogin);
 
   useEffect(() => {
     if (location.state) {
-      console.log(location.state);
+      // console.log(location.state);
       setUserLogin(location.state.user);
     }
   }, []);
