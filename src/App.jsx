@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainPage from "./pages/MainPage.jsx";
 import ChatPage from "./pages/ChatPage.jsx";
 import Login from "./pages/Login.jsx";
+import DataPage from "./pages/DataPage.jsx";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           <Route path="/ChatPage" element={<ChatPage />} />
           <Route path="/login" element={<Login />} />
           {/* <Route path="/ChatBeforePage" /> */}
-          {/* <Route path="/HealthDataPage" /> */}
+          <Route path="/DataPage" element={<DataPage />} />
         </Routes>
       </Router>
 

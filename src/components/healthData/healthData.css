@@ -1,0 +1,62 @@
+:root {
+  /* Color */
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --blue-color: #0099dd;
+  --red-color: #ff0000;
+  --bg-grey-color: #f9f9f9;
+  --light-grey-color: #ececec;
+  --dark-grey-color: #888888;
+
+  /* Size */
+  --spacing: 12px;
+  --spacing-small: 6px;
+  --avatar-size: 36px;
+
+  /* Font Size */
+  --font-large: 20px;
+  --font-regular: 16px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+
+  --font-regular: "regular";
+}
+
+.healthData_container {
+  width: 310px;
+  height: 310px;
+
+  padding: 10px;
+  border-radius: 15px;
+
+  background-color: var(--bg-grey-color);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.healthData_title {
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.healthData_content {
+  display: flex;
+}
+
+.healthData_graph {
+  width: 350px;
+  height: 300px;
+}
+
+.healthData_description {
+  width: 250px;
+  margin-top: 90px;
+  font-size: 16px;
+}
+
+#statData_data {
+  font-weight: bold;
+  color: var(--blue-color);
+}

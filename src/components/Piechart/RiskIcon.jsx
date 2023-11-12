@@ -8,7 +8,6 @@ import "./RiskIcon.css";
 function RiskIcon(level) {
   // console.log("위험도렙벨: ", level.data);
 
-<<<<<<< HEAD
     let riskLevel;
     let faceIcon;
   

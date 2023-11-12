@@ -60,7 +60,29 @@ function Header(props) {
           </NavLink>
         )}
 
-        <NavLink className="header_menu">나의 건강데이터</NavLink>
+        {loginState ? (
+          <NavLink
+            className={({ isActive }) => {
+              return isActive ? "header_menu_selected" : "header_menu";
+            }}
+            to="/DataPage"
+            state={{ user: true }}
+          >
+            나의 건강데이터
+          </NavLink>
+        ) : (
+          <NavLink
+            className={({ isActive }) => {
+              return isActive ? "header_menu" : "header_menu_selected";
+            }}
+            onClick={notLogin}
+          >
+            나의 건강데이터
+          </NavLink>
+        )}
+
+
+        {/* <NavLink className="header_menu">나의 건강데이터</NavLink> */}
 
         <div id="login">
           {/* {console.log(props)} */}
