@@ -158,41 +158,44 @@ const ChatbotContainer = ({
 
   return (
     <>
-      <div className="chatbot_container">
-        {/* <button onClick={handleClickAPICall}>GPT API call</button> */}
-        {/* <div>data : {JSON.stringify(data)}</div> */}
-        {/* <div>알려종 : {data}</div> */}
-        <div className="chatbot_intro">
-          {/* 여기 */}
-          <img src={profile} alt="profile" />
-          <div className="intro_message">
-            <span className="GPT_name">알려종</span>
-            <div className="intro_content">
-              <div style={{ whiteSpace: "pre-line" }}> {formattedAnswer}</div>
+    <div className="chatbot_outContainer">
+        <div className="chatbot_container">
+          {/* <button onClick={handleClickAPICall}>GPT API call</button> */}
+          {/* <div>data : {JSON.stringify(data)}</div> */}
+          {/* <div>알려종 : {data}</div> */}
+          <div className="chatbot_intro">
+            {/* 여기 */}
+            <img src={profile} alt="profile" />
+            <div className="intro_message">
+              <span className="GPT_name">알려종</span>
+              <div className="intro_content">
+                <div style={{ whiteSpace: "pre-line" }}> {formattedAnswer}</div>
+              </div>
+              {/* <div className="Loading"> {isLoading ? "loading..." : ""}</div> */}
+              {isLoading ? (
+                <img src={loading} alt="loading" className="loading-position" />
+              ) : (
+                ""
+              )}
             </div>
-            {/* <div className="Loading"> {isLoading ? "loading..." : ""}</div> */}
-            {isLoading ? (
-              <img src={loading} alt="loading" className="loading-position" />
-            ) : (
-              ""
-            )}
+            {/* 여기 */}
           </div>
-          {/* 여기 */}
+          {/* chatbot_sender는 스타일 없는 그냥 div */}
+          <div className="chatbot_sender">
+            {/* <InsertMessage onInsert={onInsert} /> */}
+            <MessageList sends={sender} reply={reply} submitText={submitText} />
+            {/* {data && (
+              <button
+                id="showGraph"
+                onClick={submitText}
+                style={{ display: !isLoading ? "block" : "none" }}
+              >
+                그래프 보기
+              </button>
+            )} */}
+          </div>
         </div>
-        {/* chatbot_sender는 스타일 없는 그냥 div */}
-        <div className="chatbot_sender">
-          <InsertMessage onInsert={onInsert} />
-          <MessageList sends={sender} reply={reply} submitText={submitText} />
-          {/* {data && (
-            <button
-              id="showGraph"
-              onClick={submitText}
-              style={{ display: !isLoading ? "block" : "none" }}
-            >
-              그래프 보기
-            </button>
-          )} */}
-        </div>
+        <InsertMessage onInsert={onInsert} />
       </div>
     </>
   );

@@ -23,25 +23,19 @@
   --font-regular: "regular";
 }
 
-.body {
-  margin: 3% 10%;
-  display: flex;
-  /* justify-content: space-between; */
-  justify-content: center;
-}
-
-.Card {
-  height: 960px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-left: 50px;
+.healthData_body {
+  margin-top: 5%;
+  margin-left: 10%;
+  padding-right: 10px;
 }
 
 .healthData_List {
-  width: auto;
+  margin-top: 20px;
+  width: 82%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.healthData_ListItem {
-  margin: auto;
+.healthData_symptom {
+  display: block;
 }

@@ -13,7 +13,7 @@ function RiskIcon(level) {
   const regex = /[^0-9]/g;
   const result = level.level.replace(regex, "");
 
-  if (result > 0 && result < 5) {
+  if (result < 5) {
     //1,2,3,4
     riskLevel = 1;
     faceIcon = (

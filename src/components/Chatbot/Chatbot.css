@@ -25,7 +25,7 @@
 }
 
 /* 채팅창 */
-.chatbot_container {
+.chatbot_outContainer {
   width: 650px;
   height: 960px;
   padding: 15px;
@@ -35,6 +35,7 @@
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
 
   position: relative;
+  margin-bottom: 50px;
 }
 
 /* 첫 안내 메시지 */
@@ -68,6 +69,29 @@
 }
 
 /* 입력창 */
+.chatbot_container {
+  width: 630px;
+  height: 855px;
+  border: none;
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  overflow-y: auto;
+}
+
+.chatbot_container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.chatbot_container::-webkit-scrollbar-thumb {
+  background-color: var(--dark-grey-color);
+  border-radius: 50px;
+}
+
+.chatbot_container::-webkit-scrollbar-track {
+  background-color: white;
+}
+
 #chatbot_inputArea {
   display: flex;
   align-items: center;

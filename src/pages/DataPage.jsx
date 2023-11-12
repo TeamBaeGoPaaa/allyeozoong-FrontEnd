@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./DataPage.css";
 import Header from "../components/header/header.jsx";
-import HealthData from "../components/HealthData/HealthData.jsx"
+import HealthData from "../components/healthData/healthData.jsx"
 //import Stat from "../components/Stat/Stat.jsx";
 //import ChatbotContainer from "../components/Chatbot/ChatbotContainer.jsx";
 // import SendMessage from "../components/TodoCreate/SendMessage.jsx";
@@ -23,6 +23,8 @@ function DataPage() {
   const [name, setName] = useState();
   const [freq, setFreq] = useState(0);
   const [ages, setAges] = useState([]);
+
+  const symptom = "소화불량 및 가려움증";
 
   const riskFunction = (dangerData) => {
     setData(dangerData);
@@ -58,15 +60,29 @@ function DataPage() {
   const frequency = [
     {
       id: "remainder",
-      value: 100 - freq,
+      value: 100 - 56.87,
     },
     {
       id: "percentage",
-      value: freq,
+      value: 56.87,
     },
   ];
 
-  const age = ages;
+  //const age = ages;
+  const age = [
+    {
+        id: 20,
+        value: 4,
+    },
+    {
+        id: 30,
+        value: 2,
+    },
+    {
+        id: 40,
+        value: 8
+    },
+]
 
   let temp = 0;
   let maxAge = "";
@@ -83,11 +99,12 @@ function DataPage() {
         <Header loginState={useLogin} />
       </div>
 
-      <div className="body">
-        <div className = "healthData_List"style={{display: 'flex'}}>
+      <div className="healthData_body">
+      <h2 className = "healthData_symptom" style={{display: 'block'}}>{symptom}</h2>
+        <div className = "healthData_List" style={{display: 'flex'}}>
             {<HealthData className="healthData_ListItem"
               title="질병 위험도"
-              statData={data}
+              statData={`${data}단계`}
               chartData={danger}
             />}
             {<HealthData className="healthData_ListItem"
