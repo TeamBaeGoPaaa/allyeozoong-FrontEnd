@@ -1,37 +1,43 @@
 :root {
-    /* Color */
-    --white-color: #ffffff;
-    --black-color: #000000;
-    --blue-color: #0099DD;
-    --red-color: #ff0000;
-    --bg-grey-color: #f9f9f9;
-    --light-grey-color: #ececec;
-    --dark-grey-color: #888888;
-  
-    /* Size */
-    --spacing: 12px;
-    --spacing-small: 6px;
-    --avatar-size: 36px;
-  
-    /* Font Size */
-    --font-large: 20px;
-    --font-regular: 16px;
-    --font-medium: 14px;
-    --font-small: 12px;
-    --font-micro: 10px;
+  /* Color */
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --blue-color: #0099dd;
+  --red-color: #ff0000;
+  --bg-grey-color: #f9f9f9;
+  --light-grey-color: #ececec;
+  --dark-grey-color: #888888;
 
-    --font-regular: "regular"
+  /* Size */
+  --spacing: 12px;
+  --spacing-small: 6px;
+  --avatar-size: 36px;
+
+  /* Font Size */
+  --font-large: 20px;
+  --font-regular: 16px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+
+  --font-regular: "regular";
 }
 
-.body{
-    margin: 3% 10%;
-    display: flex;
-    justify-content: space-between;
+.body {
+  margin: 3% 10%;
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+}
+
+.chatbot-board {
+  /* text-align: center; */
 }
 
 .Card {
-    height: 960px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  height: 960px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 50px;
 }

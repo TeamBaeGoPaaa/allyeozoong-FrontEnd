@@ -20,7 +20,7 @@ function ChatPage() {
   }, []);
 
   const [data, setData] = useState(0);
-  const [name, setName] = useState("");
+  const [name, setName] = useState();
   const [freq, setFreq] = useState(0);
   const [ages, setAges] = useState([]);
 
@@ -84,7 +84,7 @@ function ChatPage() {
       </div>
 
       <div className="body">
-        <div className="chatbot">
+        <div className="chatbot-board">
           {/* <SendMessage /> */}
           {/* <ChatbotContainer /> */}
           <ChatbotContainer
@@ -96,29 +96,31 @@ function ChatPage() {
           {/* <Chatbotgpt propFunction={highFunction} /> */}
         </div>
 
-        <div className="Card">
-          <Stat
-            title="질병 위험도"
-            pre="해당 증상의 잠재적 위험도는 약 "
-            statData={`${data}%`}
-            post=" 입니다."
-            chartData={danger}
-          />
-          <Stat
-            title="빈도"
-            pre="약 "
-            statData={`${freq}%`}
-            post=" 의 사용자가 해당 증상에 대해 질문했던 경험이 있습니다."
-            chartData={frequency}
-          />
-          <AgeStat
-            title="연령대"
-            pre="해당 증상에 대한 질문은 "
-            statData={`${maxAge}대`}
-            post=" 에서 가장 많았습니다."
-            chartData={age}
-          />
-        </div>
+        {name && (
+          <div className="Card">
+            <Stat
+              title="질병 위험도"
+              pre="해당 증상의 잠재적 위험도는 약 "
+              statData={`${data}%`}
+              post=" 입니다."
+              chartData={danger}
+            />
+            <Stat
+              title="빈도"
+              pre="약 "
+              statData={`${freq}%`}
+              post=" 의 사용자가 해당 증상에 대해 질문했던 경험이 있습니다."
+              chartData={frequency}
+            />
+            <AgeStat
+              title="연령대"
+              pre="해당 증상에 대한 질문은 "
+              statData={`${maxAge}대`}
+              post=" 에서 가장 많았습니다."
+              chartData={age}
+            />
+          </div>
+        )}
       </div>
     </>
   );
