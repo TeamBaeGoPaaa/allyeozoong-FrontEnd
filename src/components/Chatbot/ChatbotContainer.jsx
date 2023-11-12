@@ -20,9 +20,6 @@ const intro = dummyData.answer.replace(/\\n/g, "<br />");
 const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
   // const [ riskFunction, freqFunction, userFunction ] = props;
   
-  const [data, setData] = useState(dummyData);          //GPT 답장 
-  const [isLoading, setIsLoading] = useState(false);    //로딩 상태
-const ChatbotContainer = ({ props }) => {
   const [data, setData] = useState(dummyData); //GPT 답장
   const [isLoading, setIsLoading] = useState(false); //로딩 상태
   //const [userInput, setUserInput] = useState("");      //입력창
