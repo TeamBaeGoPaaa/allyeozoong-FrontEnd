@@ -24,6 +24,8 @@ export default function Login() {
   const handleCheck = () => {
     if (userId == id && userPassword == password) {
       // alert("맞다");
+      // localStorage.setItem("id", id);
+      // console.log(localStorage);
       navigate("/", { state: { user: true } });
     } else {
       alert(

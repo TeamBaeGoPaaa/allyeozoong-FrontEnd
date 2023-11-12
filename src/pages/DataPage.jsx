@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./DataPage.css";
 import Header from "../components/header/header.jsx";
-import HealthData from "../components/healthData/healthData.jsx"
+import HealthData from "../components/healthData/healthData.jsx";
 //import Stat from "../components/Stat/Stat.jsx";
 //import ChatbotContainer from "../components/Chatbot/ChatbotContainer.jsx";
 // import SendMessage from "../components/TodoCreate/SendMessage.jsx";
@@ -23,7 +23,6 @@ function DataPage() {
   const [name, setName] = useState();
   const [freq, setFreq] = useState(0);
   const [ages, setAges] = useState([]);
-
 
   const riskFunction = (dangerData) => {
     setData(dangerData);
@@ -89,7 +88,6 @@ function DataPage() {
     },
   ];
 
-
   const frequency_3 = [
     {
       id: "remainder",
@@ -103,79 +101,79 @@ function DataPage() {
   //const age = ages;
   const age = [
     {
-        id: 10,
-        value: 52,
+      id: 10,
+      value: 52,
     },
     {
-        id: 20,
-        value: 78,
+      id: 20,
+      value: 78,
     },
     {
-        id: 30,
-        value: 8
+      id: 30,
+      value: 8,
     },
-  ]
+  ];
 
   const age_1 = [
     {
-        id: 20,
-        value: 18,
+      id: 20,
+      value: 18,
     },
     {
-        id: 30,
-        value: 9,
+      id: 30,
+      value: 9,
     },
     {
-        id: 40,
-        value: 48
+      id: 40,
+      value: 48,
     },
-  ]
+  ];
 
   const age_2 = [
     {
-        id: 20,
-        value: 92,
+      id: 20,
+      value: 92,
     },
     {
-        id: 30,
-        value: 60,
+      id: 30,
+      value: 60,
     },
     {
-        id: 40,
-        value: 32
+      id: 40,
+      value: 32,
     },
     {
-        id: 50,
-        value: 31
+      id: 50,
+      value: 31,
     },
     {
-        id: 60,
-        value: 31
-    }
-  ]
+      id: 60,
+      value: 31,
+    },
+  ];
 
   const age_3 = [
     {
-        id: 30,
-        value: 13,
+      id: 30,
+      value: 13,
     },
     {
-        id: 40,
-        value: 22,
+      id: 40,
+      value: 22,
     },
     {
-        id: 50,
-        value: 82
+      id: 50,
+      value: 82,
     },
     {
-        id: 60,
-        value: 73
+      id: 60,
+      value: 73,
     },
     {
-        id: 70,
-        value: 8
-    }
-  ]
+      id: 70,
+      value: 8,
+    },
+  ];
 
   let temp = 0;
   let maxAge = "";
@@ -193,82 +191,126 @@ function DataPage() {
       </div>
 
       <div className="healthData_body">
-      <h2 className = "healthData_symptom" style={{display: 'block'}}>대인관계 문제</h2>
-        <div className = "healthData_List" style={{display: 'flex'}}>
-            {<HealthData className="healthData_ListItem"
+        <h2 className="healthData_symptom" style={{ display: "block" }}>
+          대인관계 문제
+        </h2>
+        <div className="healthData_List" style={{ display: "flex" }}>
+          {
+            <HealthData
+              className="healthData_ListItem"
               title="질병 위험도"
               statData={`${1}단계`}
-            />}
-            {<HealthData className="healthData_ListItem"
+            />
+          }
+          {
+            <HealthData
+              className="healthData_ListItem"
               title="빈도"
-              statData={`${72.45}%`}
+              statData={`${72.4}%`}
               chartData={frequency}
-            />}
-            {<HealthData className="healthData_ListItem"
+            />
+          }
+          {
+            <HealthData
+              className="healthData_ListItem"
               title="연령대"
               statData={`${20}대`}
               chartData={age}
-            />}
+            />
+          }
         </div>
       </div>
 
       <div className="healthData_body">
-      <h2 className = "healthData_symptom" style={{display: 'block'}}>소화불량 및 위부통증</h2>
-        <div className = "healthData_List" style={{display: 'flex'}}>
-            {<HealthData className="healthData_ListItem"
+        <h2 className="healthData_symptom" style={{ display: "block" }}>
+          소화불량 및 위부통증
+        </h2>
+        <div className="healthData_List" style={{ display: "flex" }}>
+          {
+            <HealthData
+              className="healthData_ListItem"
               title="질병 위험도"
               statData={`${5}단계`}
-            />}
-            {<HealthData className="healthData_ListItem"
+            />
+          }
+          {
+            <HealthData
+              className="healthData_ListItem"
               title="빈도"
               statData={`${23.51}%`}
               chartData={frequency_1}
-            />}
-            {<HealthData className="healthData_ListItem"
+            />
+          }
+          {
+            <HealthData
+              className="healthData_ListItem"
               title="연령대"
               statData={`${40}대`}
               chartData={age_1}
-            />}
+            />
+          }
         </div>
       </div>
 
       <div className="healthData_body">
-      <h2 className = "healthData_symptom" style={{display: 'block'}}>자아존중감</h2>
-        <div className = "healthData_List" style={{display: 'flex'}}>
-            {<HealthData className="healthData_ListItem"
+        <h2 className="healthData_symptom" style={{ display: "block" }}>
+          자아존중감
+        </h2>
+        <div className="healthData_List" style={{ display: "flex" }}>
+          {
+            <HealthData
+              className="healthData_ListItem"
               title="질병 위험도"
               statData={`${5}단계`}
-            />}
-            {<HealthData className="healthData_ListItem"
+            />
+          }
+          {
+            <HealthData
+              className="healthData_ListItem"
               title="빈도"
               statData={`${22.31}%`}
               chartData={frequency_2}
-            />}
-            {<HealthData className="healthData_ListItem"
+            />
+          }
+          {
+            <HealthData
+              className="healthData_ListItem"
               title="연령대"
               statData={`${20}대`}
               chartData={age_2}
-            />}
+            />
+          }
         </div>
       </div>
 
       <div className="healthData_body">
-      <h2 className = "healthData_symptom" style={{display: 'block'}}>월경 불규칙, 체중 감소</h2>
-        <div className = "healthData_List" style={{display: 'flex'}}>
-            {<HealthData className="healthData_ListItem"
+        <h2 className="healthData_symptom" style={{ display: "block" }}>
+          월경 불규칙, 체중 감소
+        </h2>
+        <div className="healthData_List" style={{ display: "flex" }}>
+          {
+            <HealthData
+              className="healthData_ListItem"
               title="질병 위험도"
               statData={`${8}단계`}
-            />}
-            {<HealthData className="healthData_ListItem"
+            />
+          }
+          {
+            <HealthData
+              className="healthData_ListItem"
               title="빈도"
               statData={`${52.82}%`}
               chartData={frequency_3}
-            />}
-            {<HealthData className="healthData_ListItem"
+            />
+          }
+          {
+            <HealthData
+              className="healthData_ListItem"
               title="연령대"
               statData={`${50}대`}
               chartData={age_3}
-            />}
+            />
+          }
         </div>
       </div>
     </>

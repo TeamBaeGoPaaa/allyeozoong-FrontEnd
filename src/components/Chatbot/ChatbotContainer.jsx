@@ -122,7 +122,7 @@ const ChatbotContainer = ({
   const submitText = async () => {
     const symptom = data?.related_symptom;
     const risk = data?.risk;
-    const age = [10, 20, 30, 40, 50, 60];
+    const age = [10, 10, 10, 20, 20, 20, 30, 30, 40, 50, 60];
     const age_index = Math.floor(Math.random() * age.length);
     const user_age = age[age_index];
 
@@ -158,7 +158,7 @@ const ChatbotContainer = ({
 
   return (
     <>
-    <div className="chatbot_outContainer">
+      <div className="chatbot_outContainer">
         <div className="chatbot_container">
           {/* <button onClick={handleClickAPICall}>GPT API call</button> */}
           {/* <div>data : {JSON.stringify(data)}</div> */}

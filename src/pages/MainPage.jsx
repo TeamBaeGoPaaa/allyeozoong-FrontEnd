@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Header from "../components/header/header.jsx";
 import Onboarding from "../components/onboarding/onboarding.jsx";
 import Card from "../components/Card/Card.jsx";
@@ -12,6 +12,12 @@ import news4 from "../img/news4.jpg";
 export default function MainPage() {
   const [useLogin, setUserLogin] = useState();
   const location = useLocation();
+  console.log(localStorage);
+
+  // const onLogin = useCallback((useLogin) => {
+  //   console.log(location.state);
+  //   setUserLogin(location.state.user);
+  // }, []);
 
   useEffect(() => {
     if (location.state) {
@@ -19,7 +25,7 @@ export default function MainPage() {
       setUserLogin(location.state.user);
     }
   }, []);
-   console.log(useLogin);
+  // console.log(useLogin);
 
   return (
     <>

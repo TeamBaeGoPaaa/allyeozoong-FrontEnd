@@ -21,12 +21,10 @@ function HealthData(props) {
 
   return (
     <>
-        <div className="healthData_container">
-            <div className="healthData_title">{title}</div>
-                <div className="healthData_graph">
-                    {chartComponent}
-                </div>
-        </div>
+      <div className="healthData_container">
+        <div className="healthData_title">{title}</div>
+        <div className="healthData_graph">{chartComponent}</div>
+      </div>
     </>
   );
 }
