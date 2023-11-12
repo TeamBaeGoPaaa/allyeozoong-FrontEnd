@@ -1,5 +1,7 @@
 import './Chatbot.css'
 import React, { useState,  useCallback, useRef } from "react";   //useEffect, useRef
+import "./Chatbot.css";
+import React, { useState, useCallback, useRef, useEffect } from "react"; //useEffect, useRef
 import { CallGPT } from "../../api/gpt.js";
 import { FaPaperPlane } from 'react-icons/fa';
 import profile from '../../img/profile.svg';
@@ -20,6 +22,9 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
   
   const [data, setData] = useState(dummyData);          //GPT 답장 
   const [isLoading, setIsLoading] = useState(false);    //로딩 상태
+const ChatbotContainer = ({ props }) => {
+  const [data, setData] = useState(dummyData); //GPT 답장
+  const [isLoading, setIsLoading] = useState(false); //로딩 상태
   //const [userInput, setUserInput] = useState("");      //입력창
   const [ sender , setSender ] = useState([]);         //표시할 메시지를 객체로 받기
   const [ reply, setReply ] = useState([]);
@@ -75,10 +80,34 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
     handleClickAPICall(question.text);
   }, []);
 
-  const submitText = () => {       //위험도 데이터전송
-    props.propFunction(data?.risk);
-  }
-  
+  //사용자 메시지에 대해 답장 추가 코드
+  const nextId2 = useRef(1);
+  const onInsert2 = useCallback((text2) => {
+    const question2 = {
+      id2: nextId2.current,
+      text2,
+    };
+    setReply((reply) => reply.concat(question2));
+    nextId2.current++;
+    console.log("답장 : ", question2.text2);
+  });
+
+  // 이걸로 값 확인하기########################
+  // console.log(sender);
+  // console.log(reply);
+
+  // let value;
+  // sender.forEach((item, index) => {
+  //   Object.keys(item).forEach(key => {
+  //     value = item[key];
+  //   });
+  // });
+
+  const submitText = () => {
+    //위험도 데이터전송
+    console.log("ㅋㅋzzz");
+    // props.propFunction(data?.risk);
+  };
 
   return (
     <>
@@ -87,6 +116,7 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
           {/* <div>data : {JSON.stringify(data)}</div> */}
           {/* <div>알려종 : {data}</div> */}
         <div className = "chatbot_response">
+          {/* 여기 */}
           <img src={profile} alt="profile" />
           <div className = "response_message">
             <span id = "allyeozoong">알려종</span>
@@ -95,7 +125,9 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
               {/* <div> {data?.related_symptom} </div>
               <div> {data?.risk} </div> */}
             </div>
+            <div> {isLoading ? "loading..." : ""}</div>
           </div>
+          {/* 여기 */}
         </div>       
 
         <div> {isLoading ? "loading..." : ""}</div>
