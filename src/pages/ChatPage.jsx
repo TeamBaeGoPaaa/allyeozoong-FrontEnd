@@ -9,30 +9,39 @@ import ChatbotContainer from "../components/Chatbot/ChatbotContainer.jsx";
 function ChatPage() {
   const [useLogin, setUserLogin] = useState();
   const location = useLocation();
-  console.log(useLogin);
+  // console.log(useLogin);
 
   useEffect(() => {
     if (location.state) {
-      console.log(location.state);
+      // console.log(location.state);
       setUserLogin(location.state.user);
     }
   }, []);
 
   const [data, setData] = useState(0);
+  const [name, setName] = useState("");
   const [freq, setFreq] = useState(0);
-  const [user, setUser] = useState([]);
+  const [ages, setAges] = useState([]);
 
   const riskFunction = (dangerData) => {
     setData(dangerData);
+    console.log(data);
+  };
+
+  const nameFunction = (nameData) => {
+    setName(nameData);
+    console.log(name);
   };
 
   const freqFunction = (freqData) => {
     setFreq(freqData);
+    console.log(freq);
   };
 
-  const userFunction = (userData) => {
-    setUser(userData);
-  };  
+  const agesFunction = (agesData) => {
+    setAges(agesData);
+    console.log(ages);
+  };
 
   const danger = [
     {
@@ -48,7 +57,7 @@ function ChatPage() {
   const frequency = [
     {
       id: "remainder",
-      value: 100-freq,
+      value: 100 - freq,
     },
     {
       id: "percentage",
@@ -56,20 +65,7 @@ function ChatPage() {
     },
   ];
 
-  const age = [
-    {
-      id: "20",
-      value: 3,
-    },
-    {
-      id: "40",
-      value: 8,
-    },
-    {
-      id: "30",
-      value: 2,
-    },
-  ];
+  const age = ages;
 
   let temp = 0;
   let maxAge = "";
@@ -90,13 +86,15 @@ function ChatPage() {
         <div className="chatbot">
           {/* <SendMessage /> */}
           {/* <ChatbotContainer /> */}
-          <ChatbotContainer 
-          riskFunction={riskFunction} 
-          freqFunction={freqFunction}
-          userFunction={userFunction} />
+          <ChatbotContainer
+            riskFunction={riskFunction}
+            nameFunction={nameFunction}
+            freqFunction={freqFunction}
+            agesFunction={agesFunction}
+          />
           {/* <Chatbotgpt propFunction={highFunction} /> */}
         </div>
-        
+
         <div className="Card">
           <Stat
             title="질병 위험도"
