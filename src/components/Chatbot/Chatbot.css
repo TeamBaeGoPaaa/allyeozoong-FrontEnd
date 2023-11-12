@@ -4,6 +4,7 @@
   --black-color: #000000;
   --blue-color: #0099dd;
   --red-color: #ff0000;
+  --navy-color: #023059;
   --bg-grey-color: #f9f9f9;
   --light-grey-color: #ececec;
   --dark-grey-color: #888888;
@@ -23,6 +24,7 @@
   --font-regular: "regular";
 }
 
+/* 채팅창 */
 .chatbot_container {
   width: 650px;
   height: 960px;
@@ -35,27 +37,28 @@
   position: relative;
 }
 
-.chatbot_response {
+/* 첫 안내 메시지 */
+.chatbot_intro {
   display: flex;
   align-items: flex-start;
   margin-bottom: 10px;
 }
 
-.chatbot_response img {
+.chatbot_intro img {
   margin-top: 5px;
 }
 
-.response_message {
+.intro_message {
   width: 650px;
   margin-left: 20px;
 }
 
-#allyeozoong {
+.GPT_name {
   color: var(--dark-grey-color);
   font-size: 16px;
 }
 
-.response_content {
+.intro_content {
   width: 400px;
   height: auto;
   background-color: var(--light-grey-color);
@@ -64,33 +67,7 @@
   margin-top: 5px;
 }
 
-#showGraph {
-  width: 280px;
-  height: 35px;
-  margin-top: 7px;
-
-  background-color: var(--blue-color);
-  color: white;
-  font-size: 14px;
-  border: 0;
-  border-radius: 40px;
-  margin-left: 60px;
-}
-
-#chatbot_sendmessage {
-  width: 380px;
-
-  background-color: #023059;
-  color: white;
-
-  padding: 10px;
-  border-radius: 15px;
-
-  position: absolute;
-  right: 0;
-  margin: 20px 30px;
-}
-
+/* 입력창 */
 #chatbot_inputArea {
   display: flex;
   align-items: center;
@@ -124,11 +101,11 @@
   margin-left: 5px;
 }
 
-/* 내가 보낸 채팅 스타일 */
+/* 사용자 전송 메시지 */
 #chatbot_sendList {
   list-style-type: none;
 
-  background-color: #023059;
+  background-color: var(--navy-color);
   color: white;
 
   padding: 8px 20px;
@@ -140,43 +117,31 @@
   width: 300px;
 }
 
-#chatbot_responseList_demo1 {
+/* 챗봇 전송 메시지 */
+.chatbot_response {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  width: 400px;
+}
+
+.chatbot_response img {
+  margin-top: 5px;
+}
+
+.response_message {
+  width: 650px;
+  margin-left: 20px;
+}
+
+.chatbot_responseList {
   width: 400px;
   height: auto;
   background-color: var(--light-grey-color);
   padding: 18px 20px;
   border-radius: 15px;
   margin-top: 5px;
-
   list-style-type: none;
-  float: left;
-  margin: 17px 0px;
-}
-
-.chatbot_response_demo2 {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 10px;
-
-  width: 400px;
-  /* height: auto; */
-  /* background-color: var(--light-grey-color); */
-  /* padding: 18px 20px; */
-  /* border-radius: 15px; */
-  /* margin-top: 5px; */
-
-  /* list-style-type: none; */
-  /* float: left; */
-  /* margin: 17px 0px; */
-}
-
-.chatbot_response_demo2 img {
-  margin-top: 5px;
-}
-
-.response_message_demo2 {
-  width: 650px;
-  margin-left: 20px;
 }
 
 .response_content_demo2 {
@@ -187,53 +152,18 @@
   border-radius: 15px;
   margin-top: 5px;
   list-style-type: none;
-
-  /* width: 400px;
-  height: auto;
-  background-color: var(--light-grey-color);
-  padding: 18px 20px;
-  border-radius: 15px;
-  margin-top: 5px;
-
-  list-style-type: none;
-  float: left;
-  margin: 17px 0px; */
 }
 
-/* .stat_container {
-    width: 650px;
-    height: 310px;
-  
-    padding: 10px;
-    border-radius: 15px;
-  
-    background-color: var(--bg-grey-color);
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
-  }
-  
-  .title {
-    margin-left: 20px;
-    margin-top: 10px;
-    font-size: 25px;
-    font-weight: bold;
-  }
-  
-  .content {
-    display: flex;
-  }
-  
-  .graph {
-    width: 350px;
-    height: 300px;
-  }
-  
-  .description {
-    width: 250px;
-    margin-top: 90px;
-    font-size: 16px;
-  }
-  
-  #statData {
-    font-weight: bold;
-    color: var(--blue-color);
-  }  */
+.showGraph {
+  width: 400px;
+  height: 35px;
+  margin-top: 7px;
+  display: block;
+
+  background-color: var(--blue-color);
+  color: white;
+  font-size: 14px;
+  border: 0;
+  border-radius: 40px;
+  float: left;
+}

@@ -7,12 +7,16 @@ import InsertMessage from './InsertMessage.jsx';
 import MessageList from './MessageList.jsx';
 
 const dummyData = JSON.parse(
-  `{ "answer": "안녕하세요, \\n 건강비서 알려종입니다😊👨‍⚕️ \\n\\n 고객님이 갖고 계신 건강 고민을 저한테 알려주세요! \\n\\n\\n예시) 두통이 자주 있어요. 무슨 문제가 있을까요?  \\n\\n 평소보다 심한 피로감이 있어요. 왜 그런지 모르겠어요.", 
+  `{ "answer": "더미데이터", 
   "related_symptom": "", 
   "risk": "" }`
 );
 
-const intro = dummyData.answer.replace(/\\n/g, "<br />");
+const intro = JSON.parse(
+  `{ "answer": "안녕하세요, \\n 건강비서 알려종입니다😊👨‍⚕️ \\n\\n 고객님이 갖고 계신 건강 고민을 저한테 알려주세요! \\n\\n\\n예시) 두통이 자주 있어요. 무슨 문제가 있을까요?  \\n\\n 평소보다 심한 피로감이 있어요. 왜 그런지 모르겠어요.", 
+  "related_symptom": "", 
+  "risk": "" }`
+);
 
 const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
   // const [ riskFunction, freqFunction, userFunction ] = props;
@@ -22,7 +26,7 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
   const [ sender , setSender ] = useState([]);         //표시할 보낸메시지를 객체로 받기
   const [ reply, setReply ] = useState([]);            //표시할 받은메시지를 객체로 받기
 
-  const formattedAnswer = data.answer.replace(/\\n/g, "<br />");
+  const formattedAnswer = intro.answer.replace(/\\n/g, "<br />");
   // console.log(formattedAnswer);
   
    // GPT 메시지 받기 코드
@@ -125,18 +129,15 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
           {/* <button onClick={handleClickAPICall}>GPT API call</button> */}
           {/* <div>data : {JSON.stringify(data)}</div> */}
           {/* <div>알려종 : {data}</div> */}
-        <div className = "chatbot_response">
+        <div className = "chatbot_intro">
           {/* 여기 */}
           <img src={profile} alt="profile" />
-          <div className = "response_message">
-            <span id = "allyeozoong">알려종</span>
-            <div className = "response_content">
+          <div className = "intro_message">
+            <span className = "GPT_name">알려종</span>
+            <div className = "intro_content">
               <div style={{ whiteSpace: 'pre-line' }}> {formattedAnswer}</div>
-              
-              {/* <div> {data?.related_symptom} </div>
-              <div> {data?.risk} </div> */}
             </div>
-            <div> {isLoading ? "loading..." : ""}</div>
+            <div className = "Loading"> {isLoading ? "loading..." : ""}</div>
           </div>
           {/* 여기 */}
         </div>       
@@ -145,8 +146,7 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
         <div className = "chatbot_sender">
             <InsertMessage onInsert = {onInsert} />
             <MessageList sends = {sender} reply = {reply} />
-
-            {data && (
+            {/* {data && (
               <button
               id="showGraph"
               onClick={submitText}
@@ -154,7 +154,7 @@ const ChatbotContainer = ({ riskFunction, frequFunction, useFunction }) => {
               >
                 그래프 보기
               </button>
-            )}
+            )} */}
         </div>
       </div>
    </>

@@ -17,13 +17,22 @@ function PrintResponse({ response }) {
     <>
       {/* <li id="chatbot_responseList_demo1">{text2}</li> */}
 
-      <div className="chatbot_response_demo2">
+      <div className="chatbot_response">  
         <img src={profile} alt="profile" />
-        <div className="response_message_demo2">
-          <span id="allyeozoong">알려종</span>
-          <div className="response_content_demo2">
-            <li style={{ whiteSpace: "pre-line" }}> {text2}</li>
-          </div>
+        <div className="response_message">
+          <span className="GPT_name">알려종</span>
+          {/* <div className="response_content_demo2"> */}
+            <li className="chatbot_responseList" style={{ whiteSpace: "pre-line" }}> {text2}</li>
+          {/* </div> */}
+            {/* {data && ( */}
+              <button
+                    className="showGraph"
+                    // onClick={submitText}
+                    // style={{ display: !isLoading ? "block" : "none" }}
+                    >
+                      그래프 보기
+              </button>
+            {/* )} */}
         </div>
       </div>
     </>
