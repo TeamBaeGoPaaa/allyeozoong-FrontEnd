@@ -46,12 +46,36 @@ const ChatbotContainer = ({
         prompt: `${userInput}`,
       }); // CallGPT에서 message를 리턴 받는다.
 
-      setData(JSON.parse(message));
+      // content에서 증상과 위험도를 추출
+      console.log(message);
+      // console.log(typeof message);
+      const matchResult = message.match(/증상: (.+), 위험도: (\d+)/);
+      // console.log(matchResult);
+
+      const answer = message.split("증상: ")[0];
+      const related_symptom = matchResult[1];
+      const risk = matchResult[2];
+
+      const result = {
+        answer: answer,
+        related_symptom: related_symptom,
+        risk: risk,
+      };
+
+      console.log(result);
+
+      // console.log(matchResult);
+      // const matchmessage = {answer: }
+
+      // answer
+      // Sympty
+      // risk
+      setData(result);
 
       // data.answer.replace(/\\n\g, "<br />");
       // console.log("이거나와야함 : ", JSON.parse(message));
       // console.log(JSON.parse(message).answer.replace(/\\n/g, "<br />"));
-      const abcd = JSON.parse(message).answer.replace(/\\n/g, "<br />");
+      const abcd = result.answer.replace(/\\n/g, "<br />");
       onInsert2(abcd);
     } catch (error) {
       console.error("API 호출 중 오류:", error);
