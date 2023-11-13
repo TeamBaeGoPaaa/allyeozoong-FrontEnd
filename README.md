@@ -9,8 +9,7 @@ E타입 - 청년을 위한 SW 💪
 ## 프로젝트 한 줄 설명
 
 남에게 말하기 힘든 성/건강 관련 고민을 비롯한 개인이 가질 수 있는 여러 고민들을 털어놓고, 질문에 대한 통계 정보를 통해 나만의 고민이 아님을 알려주는 인공지능 챗봇 헬스 케어 서비스 🤖
-
-![](https://velog.velcdn.com/images/yooonwodyd/post/65f2d0b1-b1e1-4f42-aead-cd5d6f93b4b1/image.gif)
+![](https://velog.velcdn.com/images/yooonwodyd/post/95f5de33-c4bb-4b73-855b-3b414ffe1050/image.gif)
 
 ![image](https://github.com/TeamBaeGoPaaa/allyeozoong-FrontEnd/assets/108808701/d1b3b0cb-cf63-40bf-ae56-8cb7274ad224)
 
