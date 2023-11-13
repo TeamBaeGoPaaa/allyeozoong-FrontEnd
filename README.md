@@ -66,5 +66,5 @@ centOS 서버를 대여한 뒤 배포 후 도메인과 SSL 인증서를 발급�
 ## 시연 영상
 해당 서비스를 직접 사용해보고 싶으시다면  
 https://allyeozoong-frontend.vercel.app/ 해당 링크로 들어가신 후 **ID = admin, PW = 12345** 로 로그인하여 사용하실 수 있습니다.  
-  
+<br />
 시연 영상 링크: https://www.youtube.com/watch?v=IzOSDzmR99Y
