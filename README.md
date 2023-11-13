@@ -64,4 +64,5 @@ centOS 서버를 대여한 뒤 배포 후 도메인과 SSL 인증서를 발급�
 ### --version 3.0 ![](https://velog.velcdn.com/images/yooonwodyd/post/fe6dc4ab-6bf4-48f5-8a0c-81377ac423fe/image.png)
 3.0에서 해결 방법 제시뿐만 아니라 상담 형태의 진행이 가능해졌습니다.
 ## 시연 영상
-해당 서비스를 직접 사용해보고 싶으시다면 https://allyeozoong-frontend.vercel.app/ 해당 링크로 들어가신 후 **ID = admin, PW = 12345** 로 로그인하여 사용하실 수 있습니다.   시연 영상 링크: https://www.youtube.com/watch?v=IzOSDzmR99Y
+해당 서비스를 직접 사용해보고 싶으시다면 https://allyeozoong-frontend.vercel.app/ 해당 링크로 들어가신 후 **ID = admin, PW = 12345** 로 로그인하여 사용하실 수 있습니다.
+시연 영상 링크: https://www.youtube.com/watch?v=IzOSDzmR99Y
